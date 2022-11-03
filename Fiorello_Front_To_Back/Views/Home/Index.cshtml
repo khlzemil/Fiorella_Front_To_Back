@@ -1,4 +1,6 @@
-﻿<div class="mkdf-content">
+﻿@using Fiorello_Front_To_Back.ViewModels.Products
+@model ProductIndexViewModel
+<div class="mkdf-content">
     <div class="mkdf-content-inner">
         <div class="mkdf-full-width">
             <div class="mkdf-full-width-inner">
@@ -78,7 +80,7 @@
                                                                       data-frame_1="tp:600;st:550;sp:1300;sR:550;"
                                                                       data-frame_999="o:0;tp:600;st:w;sR:2150;"
                                                                       style="z-index:6;font-family:'Lora';">
-                                                                
+
                                                                 Where
                                                                 flowers are our inspiration to create
                                                                 lasting memories. Whatever the occasion, our
@@ -95,7 +97,7 @@
                                                                       data-frame_1="tp:600;st:700;sp:1300;sR:700;"
                                                                       data-frame_999="o:0;tp:600;st:w;sR:2000;"
                                                                       style="z-index:7;">
-                                                                
+
                                                                 <img src="assets/vendor/wp-content/plugins/revslider/public/assets/assets/dummy.png"
                                                                      alt="s" class="tp-rs-img rs-lazyload"
                                                                      width="197" height="56"
@@ -136,395 +138,61 @@
                                                          data-layout-classes="mkdf-pli-hover-overlay">
                                                         <h2 class="mkdf-st-title mkdf-content-aligment-center">
                                                             Products
-                                                  
-                                                             </h2>
+
+                                                        </h2>
                                                         <div class="mkdf-prl-loading">
                                                             <span class="mkdf-prl-loading-msg">Loading...</span>
                                                         </div>
                                                         <div class="mkdf-pl-outer mkdf-outer-space">
-                                                            <div class="mkdf-pli mkdf-item-space ">
-                                                                <div class="mkdf-pli-inner">
-                                                                    <div class="mkdf-pli-image">
-                                                                        <img width="620" height="800"
-                                                                             src="assets/vendor/wp-content/uploads/2018/04/shop-14-img.jpg"
+
+                                                            @foreach (var product in Model.Products)
+                                                            {
+                                                                <div class="mkdf-pli mkdf-item-space ">
+                                                                    <div class="mkdf-pli-inner">
+                                                                        <div class="mkdf-pli-image">
+                                                                            <img width="620" height="800"
+                                                                             src="~/images/@product.PhotoName"
                                                                              class="attachment-woocommerce_single size-woocommerce_single wp-post-image"
                                                                              alt="l" loading="eager" />
+                                                                        </div>
+                                                                        <a class="mkdf-pli-link" itemprop="url"
+                                                                       asp-action="index" asp-controller="product"
+                                                                       title="@product.Title"></a>
                                                                     </div>
-                                                                    <a class="mkdf-pli-link" itemprop="url"
-                                                                       href="product/majesty-palm/index.html"
-                                                                       title="Majesty Palm"></a>
-                                                                </div>
-                                                                <div class="mkdf-pli-text-wrapper">
-                                                                    <h6 itemprop="name"
+                                                                    <div class="mkdf-pli-text-wrapper">
+                                                                        <h6 itemprop="name"
                                                                         class="entry-title mkdf-pli-title">
-                                                                        <a itemprop="url"
-                                                                           href="product/majesty-palm/index.html">
-                                                                            
-                                                                            Majesty
-                                                                            Palm
-                                                                        
-                                                                        </a>
-                                                                    </h6>
-                                                                    <div class="mkdf-pli-add-to-cart mkdf-default-skin">
-                                                                        <a rel="nofollow"
+                                                                            <a itemprop="url"
+                                                                           asp-action="index" asp-controller="product">
+
+                                                                                @product.Title
+
+                                                                            </a>
+                                                                        </h6>
+                                                                        <div class="mkdf-pli-add-to-cart mkdf-default-skin">
+                                                                            <a rel="nofollow"
                                                                            href="indexcd19.html?add-to-cart=365"
-                                                                           data-quantity="1"
-                                                                           data-product_id="365"
-                                                                           data-product_sku="7555"
+                                                                           data-quantity="@product.Quantity"
+                                                                           data-product_id="@product.Id"
+                                                                           data-product_sku="@product.Status"
                                                                            class="button add_to_cart_button ajax_add_to_cart mkdf-button">
-                                                                            
-                                                                            Add
-                                                                            to cart
-                                                                        
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="mkdf-pli-price">
-                                                                        
-                                                                        <span class="woocommerce-Price-amount amount">
-                                                                            
-                                                                            <span class="woocommerce-Price-currencySymbol">&#036;</span>259
-                                                                        
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="mkdf-pli mkdf-item-space ">
-                                                                <div class="mkdf-pli-inner">
-                                                                    <div class="mkdf-pli-image">
-                                                                        <img width="620" height="800"
-                                                                             src="assets/vendor/wp-content/uploads/2018/04/shop-13-img.jpg"
-                                                                             class="attachment-woocommerce_single size-woocommerce_single wp-post-image"
-                                                                             alt="k" loading="eager" />
-                                                                    </div>
-                                                                    <a class="mkdf-pli-link" itemprop="url"
-                                                                       href="product/foxglove-flower/index.html"
-                                                                       title="Foxglove Flower"></a>
-                                                                </div>
-                                                                <div class="mkdf-pli-text-wrapper">
-                                                                    <h6 itemprop="name"
-                                                                        class="entry-title mkdf-pli-title">
-                                                                        <a itemprop="url"
-                                                                           href="product/foxglove-flower/index.html">
-                                                                            
-                                                                            Foxglove
-                                                                            Flower
-                                                                        
-                                                                        </a>
-                                                                    </h6>
-                                                                    <div class="mkdf-pli-add-to-cart mkdf-default-skin">
-                                                                        <a rel="nofollow"
-                                                                           href="indexb9d5.html?add-to-cart=364"
-                                                                           data-quantity="1"
-                                                                           data-product_id="364"
-                                                                           data-product_sku="74141"
-                                                                           class="button add_to_cart_button ajax_add_to_cart mkdf-button">
-                                                                            
-                                                                            Add
-                                                                            to cart
-                                                                        
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="mkdf-pli-price">
-                                                                        
-                                                                        <span class="woocommerce-Price-amount amount">
-                                                                            
-                                                                            <span class="woocommerce-Price-currencySymbol">&#036;</span>259
-                                                                        
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="mkdf-pli mkdf-item-space ">
-                                                                <div class="mkdf-pli-inner">
-                                                                    <div class="mkdf-pli-image">
-                                                                        <span class="mkdf-pli-out-of-stock">Sold</span>
-                                                                        <img width="620" height="800"
-                                                                             src="assets/vendor/wp-content/uploads/2018/05/shop-10-img.jpg"
-                                                                             class="attachment-woocommerce_single size-woocommerce_single wp-post-image"
-                                                                             alt="d" loading="eager" />
-                                                                    </div>
-                                                                    <a class="mkdf-pli-link" itemprop="url"
-                                                                       href="product/sweet-alyssum/index.html"
-                                                                       title="Sweet Alyssum"></a>
-                                                                </div>
-                                                                <div class="mkdf-pli-text-wrapper">
-                                                                    <h6 itemprop="name"
-                                                                        class="entry-title mkdf-pli-title">
-                                                                        <a itemprop="url"
-                                                                           href="product/sweet-alyssum/index.html">
-                                                                            
-                                                                            Sweet
-                                                                            Alyssum
-                                                                        
-                                                                        </a>
-                                                                    </h6>
-                                                                    <div class="mkdf-pli-add-to-cart mkdf-default-skin">
-                                                                        <a rel="nofollow"
-                                                                           href="product/sweet-alyssum/index.html"
-                                                                           data-quantity="1"
-                                                                           data-product_id="363"
-                                                                           data-product_sku="5555"
-                                                                           class="button ajax_add_to_cart mkdf-button">
-                                                                            
-                                                                            Read
-                                                                            more
-                                                                        
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="mkdf-pli-price">
-                                                                        
-                                                                        <span class="woocommerce-Price-amount amount">
-                                                                            
-                                                                            <span class="woocommerce-Price-currencySymbol">&#036;</span>259
-                                                                        
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="mkdf-pli mkdf-item-space ">
-                                                                <div class="mkdf-pli-inner">
-                                                                    <div class="mkdf-pli-image">
-                                                                        <img width="620" height="800"
-                                                                             src="assets/vendor/wp-content/uploads/2018/04/shop-11-img.jpg"
-                                                                             class="attachment-woocommerce_single size-woocommerce_single wp-post-image"
-                                                                             alt="l" loading="eager" />
-                                                                    </div>
-                                                                    <a class="mkdf-pli-link" itemprop="url"
-                                                                       href="product/spring-snowflake/index.html"
-                                                                       title="Spring Snowflake"></a>
-                                                                </div>
-                                                                <div class="mkdf-pli-text-wrapper">
-                                                                    <h6 itemprop="name"
-                                                                        class="entry-title mkdf-pli-title">
-                                                                        <a itemprop="url"
-                                                                           href="product/spring-snowflake/index.html">
-                                                                            
-                                                                            Spring
-                                                                            Snowflake
-                                                                        
-                                                                        </a>
-                                                                    </h6>
-                                                                    <div class="mkdf-pli-add-to-cart mkdf-default-skin">
-                                                                        <a rel="nofollow"
-                                                                           href="index7f13.html?add-to-cart=358"
-                                                                           data-quantity="1"
-                                                                           data-product_id="358"
-                                                                           data-product_sku="8774"
-                                                                           class="button add_to_cart_button ajax_add_to_cart mkdf-button">
-                                                                            
-                                                                            Add
-                                                                            to cart
-                                                                        
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="mkdf-pli-price">
-                                                                        
-                                                                        <span class="woocommerce-Price-amount amount">
-                                                                            
-                                                                            <span class="woocommerce-Price-currencySymbol">&#036;</span>170
-                                                                        
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="mkdf-pli mkdf-item-space ">
-                                                                <div class="mkdf-pli-inner">
-                                                                    <div class="mkdf-pli-image">
-                                                                        <span class="mkdf-pli-onsale">Sale</span>
-                                                                        <img width="620" height="800"
-                                                                             src="assets/vendor/wp-content/uploads/2018/04/shop-12-img.jpg"
-                                                                             class="attachment-woocommerce_single size-woocommerce_single wp-post-image"
-                                                                             alt="k" loading="eager" />
-                                                                    </div>
-                                                                    <a class="mkdf-pli-link" itemprop="url"
-                                                                       href="product/scarlet-sage/index.html"
-                                                                       title="Scarlet Sage"></a>
-                                                                </div>
-                                                                <div class="mkdf-pli-text-wrapper">
-                                                                    <h6 itemprop="name"
-                                                                        class="entry-title mkdf-pli-title">
-                                                                        <a itemprop="url"
-                                                                           href="product/scarlet-sage/index.html">
-                                                                            
-                                                                            Scarlet
-                                                                            Sage
-                                                                        
-                                                                        </a>
-                                                                    </h6>
-                                                                    <div class="mkdf-pli-add-to-cart mkdf-default-skin">
-                                                                        <a rel="nofollow"
-                                                                           href="index4d00.html?add-to-cart=331"
-                                                                           data-quantity="1"
-                                                                           data-product_id="331"
-                                                                           data-product_sku="89547"
-                                                                           class="button add_to_cart_button ajax_add_to_cart mkdf-button">
-                                                                            
-                                                                            Add
-                                                                            to cart
-                                                                        
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="mkdf-pli-price">
-                                                                        
-                                                                        <del aria-hidden="true">
-                                                                            
+
+                                                                                Add
+                                                                                to cart
+
+                                                                            </a>
+                                                                        </div>
+                                                                        <div class="mkdf-pli-price">
+
                                                                             <span class="woocommerce-Price-amount amount">
-                                                                                
-                                                                                <span class="woocommerce-Price-currencySymbol">&#036;</span>259
-                                                                            
+
+                                                                                <span class="woocommerce-Price-currencySymbol">&#036;</span>@product.Cost
+
                                                                             </span>
-                                                                        
-                                                                        </del>
-                                                                        <ins>
-                                                                            
-                                                                            <span class="woocommerce-Price-amount amount">
-                                                                                
-                                                                                <span class="woocommerce-Price-currencySymbol">&#036;</span>159
-                                                                            
-                                                                            </span>
-                                                                        
-                                                                        </ins>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="mkdf-pli mkdf-item-space ">
-                                                                <div class="mkdf-pli-inner">
-                                                                    <div class="mkdf-pli-image">
-                                                                        <img width="620" height="800"
-                                                                             src="assets/vendor/wp-content/uploads/2018/04/shop-9-img.jpg"
-                                                                             class="attachment-woocommerce_single size-woocommerce_single wp-post-image"
-                                                                             alt="s" loading="eager" />
-                                                                    </div>
-                                                                    <a class="mkdf-pli-link" itemprop="url"
-                                                                       href="product/rock-soapwort/index.html"
-                                                                       title="Rock Soapwort"></a>
-                                                                </div>
-                                                                <div class="mkdf-pli-text-wrapper">
-                                                                    <h6 itemprop="name"
-                                                                        class="entry-title mkdf-pli-title">
-                                                                        <a itemprop="url"
-                                                                           href="product/rock-soapwort/index.html">
-                                                                            
-                                                                            Rock
-                                                                            Soapwort
-                                                                        
-                                                                        </a>
-                                                                    </h6>
-                                                                    <div class="mkdf-pli-add-to-cart mkdf-default-skin">
-                                                                        <a rel="nofollow"
-                                                                           href="product/rock-soapwort/index.html"
-                                                                           data-quantity="1"
-                                                                           data-product_id="319"
-                                                                           data-product_sku="89844"
-                                                                           class="button add_to_cart_button ajax_add_to_cart mkdf-button">
-                                                                            
-                                                                            View
-                                                                            products
-                                                                        
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="mkdf-pli-price">
-                                                                        
-                                                                        <span class="woocommerce-Price-amount amount">
-                                                                            
-                                                                            <span class="woocommerce-Price-currencySymbol">&#036;</span>259
-                                                                        
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="mkdf-pli mkdf-item-space ">
-                                                                <div class="mkdf-pli-inner">
-                                                                    <div class="mkdf-pli-image">
-                                                                        <img width="620" height="800"
-                                                                             src="assets/vendor/wp-content/uploads/2018/04/shop-8-img.jpg"
-                                                                             class="attachment-woocommerce_single size-woocommerce_single wp-post-image"
-                                                                             alt="l" loading="eager" />
-                                                                    </div>
-                                                                    <a class="mkdf-pli-link" itemprop="url"
-                                                                       href="product/summer-savory/index.html"
-                                                                       title="Summer Savory"></a>
-                                                                </div>
-                                                                <div class="mkdf-pli-text-wrapper">
-                                                                    <h6 itemprop="name"
-                                                                        class="entry-title mkdf-pli-title">
-                                                                        <a itemprop="url"
-                                                                           href="product/summer-savory/index.html">
-                                                                            
-                                                                            Summer
-                                                                            Savory
-                                                                        
-                                                                        </a>
-                                                                    </h6>
-                                                                    <div class="mkdf-pli-add-to-cart mkdf-default-skin">
-                                                                        <a rel="nofollow"
-                                                                           href="indexd7ec.html?add-to-cart=310"
-                                                                           data-quantity="1"
-                                                                           data-product_id="310"
-                                                                           data-product_sku="89561"
-                                                                           class="button add_to_cart_button ajax_add_to_cart mkdf-button">
-                                                                            
-                                                                            Add
-                                                                            to cart
-                                                                        
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="mkdf-pli-price">
-                                                                        
-                                                                        <span class="woocommerce-Price-amount amount">
-                                                                            
-                                                                            <span class="woocommerce-Price-currencySymbol">&#036;</span>259
-                                                                        
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="mkdf-pli mkdf-item-space ">
-                                                                <div class="mkdf-pli-inner">
-                                                                    <div class="mkdf-pli-image">
-                                                                        <img width="620" height="800"
-                                                                             src="assets/vendor/wp-content/uploads/2018/04/shop-7-img.jpg"
-                                                                             class="attachment-woocommerce_single size-woocommerce_single wp-post-image"
-                                                                             alt="g" loading="eager" />
-                                                                    </div>
-                                                                    <a class="mkdf-pli-link" itemprop="url"
-                                                                       href="product/wild-roses/index.html"
-                                                                       title="Wild Roses"></a>
-                                                                </div>
-                                                                <div class="mkdf-pli-text-wrapper">
-                                                                    <h6 itemprop="name"
-                                                                        class="entry-title mkdf-pli-title">
-                                                                        <a itemprop="url"
-                                                                           href="product/wild-roses/index.html">
-                                                                            
-                                                                            Wild
-                                                                            Roses
-                                                                        
-                                                                        </a>
-                                                                    </h6>
-                                                                    <div class="mkdf-pli-add-to-cart mkdf-default-skin">
-                                                                        <a rel="nofollow"
-                                                                           href="https://www.amazon.com/ProFlowers-Count-Ginger-Flowers-Mothers/dp/B01IDQKGYC/ref=sr_1_1_sspa?ie=UTF8&amp;qid=1524830057&amp;sr=8-1-spons&amp;keywords=roses&amp;psc=1"
-                                                                           data-quantity="1"
-                                                                           data-product_id="309"
-                                                                           data-product_sku="89564"
-                                                                           class="button product_type_external mkdf-button">
-                                                                            
-                                                                            Buy
-                                                                            on Amazon
-                                                                        
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="mkdf-pli-price">
-                                                                        
-                                                                        <span class="woocommerce-Price-amount amount">
-                                                                            
-                                                                            <span class="woocommerce-Price-currencySymbol">&#036;</span>259
-                                                                        
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                            }
                                                         </div>
                                                     </div>
                                                 </div>
@@ -594,13 +262,13 @@
                                                                                 inspiration to create
                                                                                 lasting memories. Whatever
                                                                                 the occasion...
-  
-                                                                                                                                                     </p>
+
+                                                                            </p>
                                                                         </div>
                                                                     </div>
                                                                     <div class="vc_empty_space"
                                                                          style="height: 32px">
-                                                                        
+
                                                                         <span class="vc_empty_space_inner"></span>
                                                                     </div>
                                                                     <div class="mkdf-icon-list-holder "
@@ -613,10 +281,10 @@
                                                                         </div>
                                                                         <p class="mkdf-il-text"
                                                                            style="font-size: 17px">
-                                                                            
+
                                                                             Hand
                                                                             picked just for you.
-                                                                        
+
                                                                         </p>
                                                                     </div>
                                                                     <div class="mkdf-icon-list-holder "
@@ -629,10 +297,10 @@
                                                                         </div>
                                                                         <p class="mkdf-il-text"
                                                                            style="font-size: 17px">
-                                                                            
+
                                                                             Unique
                                                                             flower arrangements
-                                                                        
+
                                                                         </p>
                                                                     </div>
                                                                     <div class="mkdf-icon-list-holder "
@@ -645,10 +313,10 @@
                                                                         </div>
                                                                         <p class="mkdf-il-text"
                                                                            style="font-size: 17px">
-                                                                            
+
                                                                             Best way
                                                                             to say you care.
-                                                                        
+
                                                                         </p>
                                                                     </div>
                                                                 </div>
@@ -671,15 +339,15 @@
                                                         <div class="mkdf-st-inner">
                                                             <h2 class="mkdf-st-title">
                                                                 Flower Experts
-                
-                                                                                                       </h2>
+
+                                                            </h2>
                                                             <p class="mkdf-st-text"
                                                                style="font-size: 17px;line-height: 29px">
                                                                 A perfect blend of creativity, energy,
                                                                 communication, happiness and love. Let us
                                                                 arrange a smile for you.
 
-                                                                                                                       </p>
+                                                            </p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -707,7 +375,7 @@
                                                             </div>
                                                             <div class="mkdf-team-info">
                                                                 <h6 class="mkdf-team-name">
-                                                                    
+
                                                                     Crystal Brooks
                                                                 </h6>
                                                                 <span class="mkdf-team-position">Florist</span>
@@ -715,9 +383,9 @@
                                                         </div>
                                                     </div>
                                                     <div class="vc_empty_space" style="height: 68px">
-                                                        
+
                                                         <span class="vc_empty_space_inner"></span>
-                                                    
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -738,7 +406,7 @@
                                                             </div>
                                                             <div class="mkdf-team-info">
                                                                 <h6 class="mkdf-team-name">
-                                                                    
+
                                                                     Shirley Harris
                                                                 </h6>
                                                                 <span class="mkdf-team-position">Manager</span>
@@ -746,9 +414,9 @@
                                                         </div>
                                                     </div>
                                                     <div class="vc_empty_space" style="height: 68px">
-                                                        
+
                                                         <span class="vc_empty_space_inner"></span>
-                                                    
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -769,7 +437,7 @@
                                                             </div>
                                                             <div class="mkdf-team-info">
                                                                 <h6 class="mkdf-team-name">
-                                                                    
+
                                                                     Beverly Clark
                                                                 </h6>
                                                                 <span class="mkdf-team-position">Florist</span>
@@ -777,9 +445,9 @@
                                                         </div>
                                                     </div>
                                                     <div class="vc_empty_space" style="height: 68px">
-                                                        
+
                                                         <span class="vc_empty_space_inner"></span>
-                                                    
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -800,7 +468,7 @@
                                                             </div>
                                                             <div class="mkdf-team-info">
                                                                 <h6 class="mkdf-team-name">
-                                                                    
+
                                                                     Amanda Watkins
                                                                 </h6>
                                                                 <span class="mkdf-team-position">Florist</span>
@@ -808,9 +476,9 @@
                                                         </div>
                                                     </div>
                                                     <div class="vc_empty_space" style="height: 68px">
-                                                        
+
                                                         <span class="vc_empty_space_inner"></span>
-                                                    
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -831,14 +499,14 @@
                                                             <h3 class="mkdf-st-title"
                                                                 style="color: #ffffff">
                                                                 Join The Colorful Bunch!
-                           
-                                                                                            </h3>
+
+                                                            </h3>
                                                         </div>
                                                     </div>
                                                     <div class="vc_empty_space" style="height: 12px">
-                                                        
+
                                                         <span class="vc_empty_space_inner"></span>
-                                                    
+
                                                     </div>
                                                     <div role="form" class="wpcf7" id="wpcf7-f133-p189-o1"
                                                          lang="en-US" dir="ltr">
@@ -871,14 +539,14 @@
                                                                 <div class="mkdf-column-left">
                                                                     <span class="wpcf7-form-control-wrap"
                                                                           data-name="your-email">
-                                                                        
+
                                                                         <input type="email" name="your-email"
                                                                                value="" size="40"
                                                                                class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email"
                                                                                aria-required="true"
                                                                                aria-invalid="false"
                                                                                placeholder="Email Address" />
-                                                                    
+
                                                                     </span>
                                                                 </div>
                                                                 <div class="mkdf-column-right">
@@ -911,8 +579,8 @@
                                                                         <div class="mkdf-st-inner">
                                                                             <h2 class="mkdf-st-title">
                                                                                 From our Blog
-                        
-                                                                                                                               </h2>
+
+                                                                            </h2>
                                                                             <p class="mkdf-st-text"
                                                                                style="font-size: 17px;line-height: 29px">
                                                                                 A perfect blend of
@@ -920,8 +588,8 @@
                                                                                 communication, happiness and
                                                                                 love. Let us arrange a smile
                                                                                 for you.
-                                                
-                                                                                                       </p>
+
+                                                                            </p>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -969,8 +637,8 @@
                                                                                 <a itemprop="url"
                                                                                    href="2018/04/index.html">
                                                                                     27.04.2018
-                   
-                                                                                                                                            </a>
+
+                                                                                </a>
                                                                                 <meta itemprop="interactionCount"
                                                                                       content="UserComments: 0" />
                                                                             </div>
@@ -982,8 +650,8 @@
                                                                                    href="flower-power/index.html"
                                                                                    title="Flower Power">
                                                                                     Flower Power
-                                                          
-                                                                                                     </a>
+
+                                                                                </a>
                                                                             </h5>
                                                                             <div class="mkdf-bli-excerpt">
                                                                                 <div class="mkdf-post-excerpt-holder">
@@ -993,8 +661,8 @@
                                                                                         sociosqu ad litora
                                                                                         torquent per conubia
                                                                                         nostra, per
-                                                                   
-                                                                                                    </p>
+
+                                                                                    </p>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -1022,8 +690,8 @@
                                                                                 <a itemprop="url"
                                                                                    href="2018/05/index.html">
                                                                                     03.05.2018
- 
-                                                                                                                                                              </a>
+
+                                                                                </a>
                                                                                 <meta itemprop="interactionCount"
                                                                                       content="UserComments: 0" />
                                                                             </div>
@@ -1035,8 +703,8 @@
                                                                                    href="local-florists/index.html"
                                                                                    title="Local Florists">
                                                                                     Local Florists
-                                        
-                                                                                                                       </a>
+
+                                                                                </a>
                                                                             </h5>
                                                                             <div class="mkdf-bli-excerpt">
                                                                                 <div class="mkdf-post-excerpt-holder">
@@ -1046,8 +714,8 @@
                                                                                         sociosqu ad litora
                                                                                         torquent per conubia
                                                                                         nostra, per
-                                                 
-                                                                                                                      </p>
+
+                                                                                    </p>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -1075,8 +743,8 @@
                                                                                 <a itemprop="url"
                                                                                    href="2018/05/index.html">
                                                                                     03.05.2018
-                                                                         
-                                                                                      </a>
+
+                                                                                </a>
                                                                                 <meta itemprop="interactionCount"
                                                                                       content="UserComments: 0" />
                                                                             </div>
@@ -1088,8 +756,8 @@
                                                                                    href="flower-beauty/index.html"
                                                                                    title="Flower Beauty">
                                                                                     Flower Beauty
-                    
-                                                                                                                                           </a>
+
+                                                                                </a>
                                                                             </h5>
                                                                             <div class="mkdf-bli-excerpt">
                                                                                 <div class="mkdf-post-excerpt-holder">
@@ -1099,8 +767,8 @@
                                                                                         sociosqu ad litora
                                                                                         torquent per conubia
                                                                                         nostra, per
-                             
-                                                                                                                                          </p>
+
+                                                                                    </p>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -1141,19 +809,19 @@
                                                                 </div>
                                                                 <div class="mkdf-testimonial-text-holder">
                                                                     <p class="mkdf-testimonial-text">
-                                                                        
+
                                                                         Nullam
                                                                         dictum felis eu pede mollis pretium.
                                                                         Integer tincidunt. Cras dapibus
                                                                         lingua.
-                                        
-                                                                                               </p>
+
+                                                                    </p>
                                                                     <span class="mkdf-testimonial-author">
                                                                         <span class="mkdf-testimonials-author-name">
-                                                                            
+
                                                                             Anna
                                                                             Barnes
-                                                                        
+
                                                                         </span>
                                                                         <span class="mkdf-testimonials-author-job">Florist</span>
                                                                     </span>
@@ -1171,19 +839,19 @@
                                                                 </div>
                                                                 <div class="mkdf-testimonial-text-holder">
                                                                     <p class="mkdf-testimonial-text">
-                                                                        
+
                                                                         Lorem
                                                                         ipsum dolor sit amet, consectetuer
                                                                         adipiscing elit. Aenean commodo
                                                                         ligula eget.
-                                                                    
+
                                                                     </p>
                                                                     <span class="mkdf-testimonial-author">
                                                                         <span class="mkdf-testimonials-author-name">
-                                                                            
+
                                                                             Jasmine
                                                                             White
-                                                                        
+
                                                                         </span>
                                                                         <span class="mkdf-testimonials-author-job">Florist</span>
                                                                     </span>

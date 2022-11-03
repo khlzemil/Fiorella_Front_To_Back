@@ -198,6 +198,12 @@
                             <span class="menu-title">Category</span>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-info" asp-action="index" asp-controller="product">
+                            <i class="mdi mdi-home menu-icon"></i>
+                            <span class="menu-title">Product</span>
+                        </a>
+                    </li>
                 </ul>
             </nav>
             @RenderBody()
@@ -226,7 +232,7 @@
     <!-- End custom js for this page-->
 
     <script src="~/admin/js/jquery.cookie.js" type="text/javascript"></script>
-    @*@RenderSection("Scripts", false);*@
+    @RenderSection("Scripts", false);
 </body>
 
 </html>

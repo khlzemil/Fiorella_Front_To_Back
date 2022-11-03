@@ -23,7 +23,10 @@ namespace Fiorello_Front_To_Back.Areas.Admin.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var model = await _appDbContext.Products.ToListAsync();
+            var model = new ProductsIndexViewModel
+            {
+                Products = await _appDbContext.Product.ToListAsync()
+            };
             return View(model);
         }
 
@@ -65,7 +68,7 @@ namespace Fiorello_Front_To_Back.Areas.Admin.Controllers
                 return View(model);
             }
 
-            bool isExist = await _appDbContext.Products.AnyAsync(p => p.Title.ToLower().Trim() == model.Title.ToLower().Trim());
+            bool isExist = await _appDbContext.Product.AnyAsync(p => p.Title.ToLower().Trim() == model.Title.ToLower().Trim());
             if (isExist)
             {
                 ModelState.AddModelError("Title", "Bu adda product movcuddur");
@@ -115,12 +118,11 @@ namespace Fiorello_Front_To_Back.Areas.Admin.Controllers
                 Status = model.Status,
                 PhotoName = await _fileService.UploadAsync(model.MainPhoto, _webHostEnvironment.WebRootPath),
 
-
             };
 
-            await _appDbContext.Products.AddAsync(product);
-            await _appDbContext.SaveChangesAsync();
+            await _appDbContext.Product.AddAsync(product);
 
+            await _appDbContext.SaveChangesAsync();
 
             int order = 1;
             foreach (var photo in model.Photos)
@@ -136,6 +138,8 @@ namespace Fiorello_Front_To_Back.Areas.Admin.Controllers
 
                 order++;
             }
+            
+
 
             return RedirectToAction("Index");
 
@@ -146,7 +150,7 @@ namespace Fiorello_Front_To_Back.Areas.Admin.Controllers
 
         public async Task<IActionResult> Update(int id)
         {
-            var product = await _appDbContext.Products.Include(p => p.ProductPhotos).FirstOrDefaultAsync(p => p.Id == id);
+            var product = await _appDbContext.Product.Include(p => p.ProductPhotos).FirstOrDefaultAsync(p => p.Id == id);
 
             if (product == null) return NotFound();
 
@@ -191,7 +195,7 @@ namespace Fiorello_Front_To_Back.Areas.Admin.Controllers
 
             if (id != model.Id) return BadRequest();
 
-            var product = await _appDbContext.Products.Include(p => p.ProductPhotos).FirstOrDefaultAsync(p => p.Id == id);
+            var product = await _appDbContext.Product.Include(p => p.ProductPhotos).FirstOrDefaultAsync(p => p.Id == id);
 
             model.ProductPhotos = product.ProductPhotos.ToList();
 
@@ -199,7 +203,7 @@ namespace Fiorello_Front_To_Back.Areas.Admin.Controllers
 
             if (product == null) return NotFound();
 
-            bool isExits = await _appDbContext.Products.AnyAsync(p => p.Title.ToLower().Trim() == product.Title.ToLower().Trim() && p.Id != product.Id);
+            bool isExits = await _appDbContext.Product.AnyAsync(p => p.Title.ToLower().Trim() == product.Title.ToLower().Trim() && p.Id != product.Id);
 
             if (isExits)
             {
@@ -232,7 +236,7 @@ namespace Fiorello_Front_To_Back.Areas.Admin.Controllers
                     return View(model);
                 }
 
-                _fileService.Delete(model.PhotoName, _webHostEnvironment.WebRootPath);
+                _fileService.Delete(product.PhotoName, _webHostEnvironment.WebRootPath);
                 product.PhotoName = await _fileService.UploadAsync(model.MainPhoto, _webHostEnvironment.WebRootPath);
             }
 
@@ -289,7 +293,7 @@ namespace Fiorello_Front_To_Back.Areas.Admin.Controllers
 
         public async Task<IActionResult> Delete(int id)
         {
-            var product = await _appDbContext.Products.Include(p => p.ProductPhotos).FirstOrDefaultAsync(p => p.Id == id);
+            var product = await _appDbContext.Product.Include(p => p.ProductPhotos).FirstOrDefaultAsync(p => p.Id == id);
 
             if (product == null) return NotFound();
 
@@ -300,9 +304,42 @@ namespace Fiorello_Front_To_Back.Areas.Admin.Controllers
                 _fileService.Delete(photo.PhotoName, _webHostEnvironment.WebRootPath);
 
             }
-            _appDbContext.Products.Remove(product);
+            _appDbContext.Product.Remove(product);
             await _appDbContext.SaveChangesAsync();
             return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Details(int id)
+        {
+            var product = await _appDbContext.Product.Include(p => p.ProductPhotos).FirstOrDefaultAsync(p => p.Id == id);
+
+
+
+            if (product == null) return NotFound();
+
+            var model = new ProductsDetailsViewModel
+            {
+                Id = product.Id,
+                Title = product.Title,
+                Cost = product.Cost,
+                Description = product.Description,
+                Quantity = product.Quantity,
+                Weight = product.Weight,
+                Dimensions = product.Dimensions,
+                CategoryId = product.CategoryId,
+                Status = product.Status,
+                PhotoName = product.PhotoName,
+                Photos = product.ProductPhotos,
+                Categories = await _appDbContext.Categories.Select(c => new SelectListItem
+                {
+                    Text = c.Title,
+                    Value = c.Id.ToString()
+                }).ToListAsync()
+
+            };
+
+            return View(model);
         }
 
         [HttpGet]

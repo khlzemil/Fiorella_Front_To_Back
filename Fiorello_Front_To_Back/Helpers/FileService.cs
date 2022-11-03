@@ -5,7 +5,7 @@
         public async Task<string> UploadAsync(IFormFile file, string webRootPath)
         {
             var fileName = $"{Guid.NewGuid()}_{file.FileName}";
-            var path = Path.Combine(webRootPath, "assets/img", fileName);
+            var path = Path.Combine(webRootPath, "images", fileName);
 
             using (FileStream fileStream = new FileStream(path, FileMode.Create, FileAccess.ReadWrite))
             {
@@ -16,7 +16,7 @@
 
         public void Delete(string fileName, string webRootPath)
         {
-            var path = Path.Combine(webRootPath, "assets/img", fileName);
+            var path = Path.Combine(webRootPath, "images", fileName);
             if (File.Exists(path))
             {
                 File.Delete(path);

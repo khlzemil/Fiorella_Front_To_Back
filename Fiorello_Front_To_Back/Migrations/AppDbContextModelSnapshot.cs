@@ -82,7 +82,7 @@ namespace Fiorello_Front_To_Back.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Product");
                 });
 
             modelBuilder.Entity("Fiorello_Front_To_Back.Models.ProductPhoto", b =>

@@ -10,7 +10,7 @@
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content="Fiorello" />
 	<meta property="og:description" content="A Flower Shop and Florist WooCommerce Theme" />
-	<meta property="og:image" content="assets/img/open_graph.jpg" />
+	<meta property="og:image" content="~/assets/img/open_graph.jpg" />
 	<meta charset="UTF-8" />
 	<link rel="profile" href="https://gmpg.org/xfn/11" />
 	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
@@ -22,9 +22,9 @@
 		var dataLayer = dataLayer || [];
 	</script>
 	<link rel='dns-prefetch' href='http://export.qodethemes.com/' />
-	<link rel='dns-prefetch' href='http://maps.googleapis.com/' />
+	<link rel='dns-prefetch' href='https://maps.googleapis.com/' />
 	<link rel='dns-prefetch' href='http://static.zdassets.com/' />
-	<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+	<link rel='dns-prefetch' href='https://fonts.googleapis.com/' />
 	<link rel='dns-prefetch' href='http://s.w.org/' />
 	<link rel="alternate" type="application/rss+xml" title="Fiorello &raquo; Feed" href="feed/index.html" />
 	<link rel="alternate" type="application/rss+xml" title="Fiorello &raquo; Comments Feed"
@@ -395,18 +395,20 @@
 	<link rel='stylesheet' id='qode-zendesk-chat-css'
 		href='~/assets/vendor/wp-content/plugins/qode-zendesk-chat/assets/main1eb7.css?ver=6.0.3' type='text/css'
 		media='all' />
-	<script type='text/javascript' src='assets/vendor/wp-includes/js/jquery/jquery.minaf6c.js?ver=3.6.0'
+		@RenderSection("styles",false)
+	<script type='text/javascript' src='~/assets/vendor/wp-includes/js/jquery/jquery.minaf6c.js?ver=3.6.0'
 		id='jquery-core-js'></script>
-	<script type='text/javascript' src='assets/vendor/wp-includes/js/jquery/jquery-migrate.mind617.js?ver=3.3.2'
+		@RenderSection("Scripts", false)
+	<script type='text/javascript' src='~/assets/vendor/wp-includes/js/jquery/jquery-migrate.mind617.js?ver=3.3.2'
 		id='jquery-migrate-js'></script>
 	<script type='text/javascript'
-		src='assets/vendor/wp-content/plugins/revslider/public/assets/js/rbtools.min0660.js?ver=6.6.5' async
+		src='~/assets/vendor/wp-content/plugins/revslider/public/assets/js/rbtools.min0660.js?ver=6.6.5' async
 		id='tp-tools-js'></script>
 	<script type='text/javascript'
-		src='assets/vendor/wp-content/plugins/revslider/public/assets/js/rs6.min0660.js?ver=6.6.5' async
+		src='~/assets/vendor/wp-content/plugins/revslider/public/assets/js/rs6.min0660.js?ver=6.6.5' async
 		id='revmin-js'></script>
 	<script type='text/javascript'
-		src='assets/vendor/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.mindc32.js?ver=2.7.0-wc.7.0.0'
+		src='~/assets/vendor/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.mindc32.js?ver=2.7.0-wc.7.0.0'
 		id='jquery-blockui-js'></script>
 	<script type='text/javascript' id='wc-add-to-cart-js-extra'>
 		/* <![CDATA[ */
@@ -414,16 +416,16 @@
 /* ]]> */
 	</script>
 	<script type='text/javascript'
-		src='assets/vendor/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min823d.js?ver=7.0.0'
+		src='~/assets/vendor/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min823d.js?ver=7.0.0'
 		id='wc-add-to-cart-js'></script>
 	<script type='text/javascript'
-		src='assets/vendor/wp-content/plugins/wp-user-avatar/assets/flatpickr/flatpickr.minb2f9.js?ver=4.3.0'
+		src='~/assets/vendor/wp-content/plugins/wp-user-avatar/assets/flatpickr/flatpickr.minb2f9.js?ver=4.3.0'
 		id='ppress-flatpickr-js'></script>
 	<script type='text/javascript'
-		src='assets/vendor/wp-content/plugins/wp-user-avatar/assets/select2/select2.minb2f9.js?ver=4.3.0'
+		src='~/assets/vendor/wp-content/plugins/wp-user-avatar/assets/select2/select2.minb2f9.js?ver=4.3.0'
 		id='ppress-select2-js'></script>
 	<script type='text/javascript'
-		src='assets/vendor/wp-content/plugins/js_composer/assets/js/vendors/woocommerce-add-to-cartf7be.js?ver=6.10.0'
+		src='~/assets/vendor/wp-content/plugins/js_composer/assets/js/vendors/woocommerce-add-to-cartf7be.js?ver=6.10.0'
 		id='vc_woocommerce-add-to-cart-js-js'></script>
 	<link rel="https://api.w.org/" href="wp-json/index.html" />
 	<link rel="alternate" type="application/json" href="wp-json/wp/v2/pages/189.json" />
@@ -434,9 +436,9 @@
 	<link rel="canonical" href="index.html" />
 	<link rel='shortlink' href='index.html' />
 	<link rel="alternate" type="application/json+oembed"
-		href="assets/vendor/wp-json/oembed/1.0/embed8d75.json?url=https%3A%2F%2Ffiorello.qodeinteractive.com%2F" />
+		href="~/assets/vendor/wp-json/oembed/1.0/embed8d75.json?url=https%3A%2F%2Ffiorello.qodeinteractive.com%2F" />
 	<link rel="alternate" type="text/xml+oembed"
-		href="assets/vendor/wp-json/oembed/1.0/embede8c6?url=https%3A%2F%2Ffiorello.qodeinteractive.com%2F&amp;format=xml" />
+		href="~/assets/vendor/wp-json/oembed/1.0/embede8c6?url=https%3A%2F%2Ffiorello.qodeinteractive.com%2F&amp;format=xml" />
 	<script type="text/javascript">
 		(function (url) {
 			if (/(?:Chrome\/26\.0\.1410\.63 Safari\/537\.31|WordfenceTestMonBot)/.test(navigator.userAgent)) { return; }
@@ -499,9 +501,9 @@
 	<meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress." />
 	<meta name="generator"
 		content="Powered by Slider Revolution 6.6.5 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />
-	<link rel="icon" href="assets/vendor/wp-content/uploads/2018/05/cropped-Favicon-32x32.png" sizes="32x32" />
-	<link rel="icon" href="assets/vendor/wp-content/uploads/2018/05/cropped-Favicon-192x192.png" sizes="192x192" />
-	<link rel="apple-touch-icon" href="assets/vendor/wp-content/uploads/2018/05/cropped-Favicon-180x180.png" />
+	<link rel="icon" href="~/assets/vendor/wp-content/uploads/2018/05/cropped-Favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" href="~/assets/vendor/wp-content/uploads/2018/05/cropped-Favicon-192x192.png" sizes="192x192" />
+	<link rel="apple-touch-icon" href="~/assets/vendor/wp-content/uploads/2018/05/cropped-Favicon-180x180.png" />
 	<meta name="msapplication-TileImage"
 		content="https://fiorello.qodeinteractive.com/wp-content/uploads/2018/05/cropped-Favicon-270x270.png" />
 	<script>function setREVStartSize(e) {
@@ -601,8 +603,7 @@
 </head>
 
 <body
-	class="mkdf-woo-single-page home page-template page-template-full-width page-template-full-width-php page page-id-189 theme-fiorello fiorello-core-1.3 woocommerce-no-js fiorello-ver-1.6 mkdf-grid-1300 mkdf-content-background-full-image mkdf-sticky-header-on-scroll-down-up mkdf-dropdown-animate-height mkdf-header-standard mkdf-menu-area-shadow-disable mkdf-menu-area-in-grid-shadow-disable mkdf-menu-area-border-disable mkdf-menu-area-in-grid-border-disable mkdf-logo-area-border-disable mkdf-woocommerce-columns-3 mkdf-woo-medium-space mkdf-woo-pl-info-below-image mkdf-woo-single-thumb-on-left-side mkdf-woo-single-has-pretty-photo mkdf-default-mobile-header mkdf-sticky-up-mobile-header mkdf-slide-from-header-bottom wpb-js-composer js-comp-ver-6.10.0 vc_responsive"
-	itemscope itemtype="http://schema.org/WebPage">
+class="mkdf-woo-single-page home page-template page-template-full-width page-template-full-width-php page page-id-189 theme-fiorello fiorello-core-1.3 woocommerce-no-js fiorello-ver-1.6 mkdf-grid-1300 mkdf-content-background-full-image mkdf-sticky-header-on-scroll-down-up mkdf-dropdown-animate-height mkdf-header-standard mkdf-menu-area-shadow-disable mkdf-menu-area-in-grid-shadow-disable mkdf-menu-area-border-disable mkdf-menu-area-in-grid-border-disable mkdf-logo-area-border-disable mkdf-woocommerce-columns-3 mkdf-woo-medium-space mkdf-woo-pl-info-below-image mkdf-woo-single-thumb-on-left-side mkdf-woo-single-has-pretty-photo mkdf-default-mobile-header mkdf-sticky-up-mobile-header mkdf-slide-from-header-bottom wpb-js-composer js-comp-ver-6.10.0 vc_responsive"	itemscope itemtype="http://schema.org/WebPage">
 	<div class="mkdf-wrapper">
 		<div class="mkdf-wrapper-inner">
 			<header class="mkdf-page-header">
@@ -638,7 +639,7 @@
 														<ul>
 															<li id="nav-menu-item-368"
 																class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-189 current_page_item ">
-																<a href="index.html" class=""><span
+																<a asp-action="index" asp-controller="home" class=""><span
 																		class="item_outer"><span class="item_text">Main
 																			Home</span></span></a></li>
 															<li id="nav-menu-item-85"
@@ -689,12 +690,12 @@
 														<ul>
 															<li id="nav-menu-item-971"
 																class="menu-item menu-item-type-post_type menu-item-object-page ">
-																<a href="about-us/index.html" class=""><span
+																<a asp-action="index" asp-controller="about" class=""><span
 																		class="item_outer"><span class="item_text">About
 																			Us</span></span></a></li>
 															<li id="nav-menu-item-802"
 																class="menu-item menu-item-type-post_type menu-item-object-page ">
-																<a href="faq-page/index.html" class=""><span
+																<a asp-action="index" asp-controller="faqpage" class=""><span
 																		class="item_outer"><span class="item_text">FAQ
 																			Page</span></span></a></li>
 															<li id="nav-menu-item-702"
@@ -725,7 +726,7 @@
 																<ul>
 																	<li id="nav-menu-item-253"
 																		class="menu-item menu-item-type-post_type menu-item-object-product ">
-																		<a href="product/orange-amaryllis/index.html"
+																		<a asp-action="index" asp-controller="productdetails"
 																			class=""><span class="item_outer"><span
 																					class="item_text">Standard
 																					Product</span></span></a></li>
@@ -788,7 +789,7 @@
 																<ul>
 																	<li id="nav-menu-item-242"
 																		class="menu-item menu-item-type-post_type menu-item-object-page ">
-																		<a href="my-account/index.html" class=""><span
+																		<a asp-controller="myaccount" asp-action="index" class=""><span
 																				class="item_outer"><span
 																					class="item_text">My
 																					Account</span></span></a></li>
@@ -940,7 +941,7 @@
 															</li>
 															<li id="nav-menu-item-2095"
 																class="menu-item menu-item-type-post_type menu-item-object-page ">
-																<a href="portfolio-masonry/index.html" class=""><span
+																<a asp-controller="blog" asp-action="index" class=""><span
 																		class="item_outer"><span
 																			class="item_text">Masonry</span></span></a>
 															</li>
@@ -1026,7 +1027,7 @@
 											</li>
 											<li id="nav-menu-item-567"
 												class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children  has_sub narrow">
-												<a href="#" class=""><span class="item_outer"><span
+												<a asp-controller="blog" asp-action="index"><span class="item_outer"><span
 															class="item_text">Blog</span><i
 															class="mkdf-menu-arrow fa fa-angle-down"></i></span></a>
 												<div class="second">
@@ -1034,7 +1035,7 @@
 														<ul>
 															<li id="nav-menu-item-863"
 																class="menu-item menu-item-type-post_type menu-item-object-page ">
-																<a href="blog-masonry/index.html" class=""><span
+																<a asp-action="index" asp-controller="blog" class=""><span
 																		class="item_outer"><span
 																			class="item_text">Masonry</span></span></a>
 															</li>
@@ -1343,7 +1344,7 @@
 											<ul id="menu-main-menu-1" class="clearfix">
 												<li id="sticky-nav-menu-item-90"
 													class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children mkdf-active-item has_sub narrow">
-													<a href="#" class=" current "><span class="item_outer"><span
+													<a asp-action="index" asp-controller="home" class=" current "><span class="item_outer"><span
 																class="item_text">Home</span><span
 																class="plus"></span><i
 																class="mkdf-menu-arrow fa fa-angle-down"></i></span></a>
@@ -1417,7 +1418,7 @@
 																				class="plus"></span></span></a></li>
 																<li id="sticky-nav-menu-item-802"
 																	class="menu-item menu-item-type-post_type menu-item-object-page ">
-																	<a href="faq-page/index.html" class=""><span
+																	<a asp-controller="faqpage" asp-action="index" class=""><span
 																			class="item_outer"><span
 																				class="item_text">FAQ Page</span><span
 																				class="plus"></span></span></a></li>
@@ -1451,7 +1452,7 @@
 																	<ul>
 																		<li id="sticky-nav-menu-item-253"
 																			class="menu-item menu-item-type-post_type menu-item-object-product ">
-																			<a href="product/orange-amaryllis/index.html"
+																			<a asp-action="index" asp-controller="productdetails"
 																				class=""><span class="item_outer"><span
 																						class="item_text">Standard
 																						Product</span><span
@@ -1837,7 +1838,7 @@
 															<ul>
 																<li id="sticky-nav-menu-item-863"
 																	class="menu-item menu-item-type-post_type menu-item-object-page ">
-																	<a href="blog-masonry/index.html" class=""><span
+																	<a asp-action="index" asp-controller="blog" class=""><span
 																			class="item_outer"><span
 																				class="item_text">Masonry</span><span
 																				class="plus"></span></span></a></li>
@@ -2236,7 +2237,7 @@
 												href="about-us/index.html" class=""><span>About Us</span></a></li>
 										<li id="mobile-menu-item-802"
 											class="menu-item menu-item-type-post_type menu-item-object-page "><a
-												href="faq-page/index.html" class=""><span>FAQ Page</span></a></li>
+												asp-action="index" asp-controller="faqpage" class=""><span>FAQ Page</span></a></li>
 										<li id="mobile-menu-item-702"
 											class="menu-item menu-item-type-post_type menu-item-object-page "><a
 												href="contact-us/index.html" class=""><span>Contact Us</span></a></li>
@@ -2256,7 +2257,7 @@
 											<ul class="sub_menu">
 												<li id="mobile-menu-item-253"
 													class="menu-item menu-item-type-post_type menu-item-object-product ">
-													<a href="product/orange-amaryllis/index.html"
+													<a asp-action="index" asp-controller="productdetails"
 														class=""><span>Standard Product</span></a></li>
 												<li id="mobile-menu-item-320"
 													class="menu-item menu-item-type-post_type menu-item-object-product ">
@@ -2684,8 +2685,25 @@
 						class="mkdf-icon-font-awesome fa fa-angle-up "></i>
 				</span>
 			</a>
-				@RenderBody();
-
+			<div class="mkdf-content">
+				<div class="mkdf-content-inner">
+					<div class="mkdf-full-width">
+						<div class="mkdf-full-width-inner">
+							<div class="mkdf-grid-row">
+								<div class="mkdf-page-content-holder mkdf-grid-col-12">
+									@RenderBody()
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="mkdf-content-bottom">
+						<div class="mkdf-content-bottom-inner mkdf-full-width">
+							<div class="widget widget_mkdf_instagram_widget"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
 			<footer class="mkdf-page-footer ">
 				<div class="mkdf-footer-top-holder">
 					<div class="mkdf-footer-top-inner mkdf-grid">
@@ -2709,7 +2727,7 @@
 												<a href="product-list/index.html">Online Stores</a></li>
 											<li id="menu-item-106"
 												class="menu-item menu-item-type-custom menu-item-object-custom menu-item-106">
-												<a asp-action="index" asp-controller="faqpage" >Terms &#038; Conditions</a></li>
+												<a href="faq-page/index.html">Terms &#038; Conditions</a></li>
 										</ul>
 									</div>
 								</div>
@@ -2732,7 +2750,7 @@
 												<a href="my-account/orders/index.html">Order Tracking</a></li>
 											<li id="menu-item-1787"
 												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1787">
-												<a asp-action="index" asp-controller="faqpage" >FAQ Page</a></li>
+												<a asp-action="index" asp-controller="faqpage">FAQ Page</a></li>
 											<li id="menu-item-1786"
 												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1786">
 												<a href="contact-us/index.html">Contact Us</a></li>
@@ -3041,14 +3059,7 @@
 			transition: all .25s
 		}
 
-		@@media only screen and (max-width:1024px) {
-			.mkdf-fiorello-lines {
-				-webkit-transform: rotate(-90deg) translateY(-6px) !important;
-				transform: rotate(-90deg) translateY(-6px) !important;
-				top: auto !important;
-				left: 50% !important;
-				bottom: -20px !important
-			}
+	
 
 			.mkdf-fiorello-lines .tp-bullet {
 				position: static !important;
@@ -3083,7 +3094,7 @@
 		}
 	</style>
 	<script type='text/javascript'
-		src='assets/vendor/wp-content/plugins/contact-form-7/includes/swv/js/index77e1.js?ver=5.6.4'
+		src='~/assets/vendor/wp-content/plugins/contact-form-7/includes/swv/js/index77e1.js?ver=5.6.4'
 		id='swv-js'></script>
 	<script type='text/javascript' id='contact-form-7-js-extra'>
 		/* <![CDATA[ */
@@ -3091,11 +3102,11 @@
 /* ]]> */
 	</script>
 	<script type='text/javascript'
-		src='assets/vendor/wp-content/plugins/contact-form-7/includes/js/index77e1.js?ver=5.6.4'
+		src='~/assets/vendor/wp-content/plugins/contact-form-7/includes/js/index77e1.js?ver=5.6.4'
 		id='contact-form-7-js'></script>
 	<script type='text/javascript' src='~/assets/js/rbt-modules1eb7.js?ver=6.0.3' id='rabbit_js-js'></script>
 	<script type='text/javascript'
-		src='assets/vendor/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.minc599.js?ver=2.1.4-wc.7.0.0'
+		src='~/assets/vendor/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.minc599.js?ver=2.1.4-wc.7.0.0'
 		id='js-cookie-js'></script>
 	<script type='text/javascript' id='woocommerce-js-extra'>
 		/* <![CDATA[ */
@@ -3103,7 +3114,7 @@
 /* ]]> */
 	</script>
 	<script type='text/javascript'
-		src='assets/vendor/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min823d.js?ver=7.0.0'
+		src='~/assets/vendor/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min823d.js?ver=7.0.0'
 		id='woocommerce-js'></script>
 	<script type='text/javascript' id='wc-cart-fragments-js-extra'>
 		/* <![CDATA[ */
@@ -3111,7 +3122,7 @@
 /* ]]> */
 	</script>
 	<script type='text/javascript'
-		src='assets/vendor/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min823d.js?ver=7.0.0'
+		src='~/assets/vendor/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min823d.js?ver=7.0.0'
 		id='wc-cart-fragments-js'></script>
 	<script type='text/javascript' id='ppress-frontend-script-js-extra'>
 		/* <![CDATA[ */
@@ -3119,103 +3130,103 @@
 /* ]]> */
 	</script>
 	<script type='text/javascript'
-		src='assets/vendor/wp-content/plugins/wp-user-avatar/assets/js/frontend.minb2f9.js?ver=4.3.0'
+		src='~/assets/vendor/wp-content/plugins/wp-user-avatar/assets/js/frontend.minb2f9.js?ver=4.3.0'
 		id='ppress-frontend-script-js'></script>
 	<script type='text/javascript'
-		src='assets/vendor/wp-content/plugins/duracelltomi-google-tag-manager/js/gtm4wp-form-move-tracker34dd.js?ver=1.16.1'
+		src='~/assets/vendor/wp-content/plugins/duracelltomi-google-tag-manager/js/gtm4wp-form-move-tracker34dd.js?ver=1.16.1'
 		id='gtm4wp-form-move-tracker-js'></script>
-	<script type='text/javascript' src='assets/vendor/wp-includes/js/jquery/ui/core.min0028.js?ver=1.13.1'
+	<script type='text/javascript' src='~/assets/vendor/wp-includes/js/jquery/ui/core.min0028.js?ver=1.13.1'
 		id='jquery-ui-core-js'></script>
-	<script type='text/javascript' src='assets/vendor/wp-includes/js/jquery/ui/tabs.min0028.js?ver=1.13.1'
+	<script type='text/javascript' src='~/assets/vendor/wp-includes/js/jquery/ui/tabs.min0028.js?ver=1.13.1'
 		id='jquery-ui-tabs-js'></script>
-	<script type='text/javascript' src='assets/vendor/wp-includes/js/jquery/ui/accordion.min0028.js?ver=1.13.1'
+	<script type='text/javascript' src='~/assets/vendor/wp-includes/js/jquery/ui/accordion.min0028.js?ver=1.13.1'
 		id='jquery-ui-accordion-js'></script>
 	<script type='text/javascript' id='mediaelement-core-js-before'>
 		var mejsL10n = { "language": "en", "strings": { "mejs.download-file": "Download File", "mejs.install-flash": "You are using a browser that does not have Flash player enabled or installed. Please turn on your Flash player plugin or download the latest version from https:\/\/get.adobe.com\/flashplayer\/", "mejs.fullscreen": "Fullscreen", "mejs.play": "Play", "mejs.pause": "Pause", "mejs.time-slider": "Time Slider", "mejs.time-help-text": "Use Left\/Right Arrow keys to advance one second, Up\/Down arrows to advance ten seconds.", "mejs.live-broadcast": "Live Broadcast", "mejs.volume-help-text": "Use Up\/Down Arrow keys to increase or decrease volume.", "mejs.unmute": "Unmute", "mejs.mute": "Mute", "mejs.volume-slider": "Volume Slider", "mejs.video-player": "Video Player", "mejs.audio-player": "Audio Player", "mejs.captions-subtitles": "Captions\/Subtitles", "mejs.captions-chapters": "Chapters", "mejs.none": "None", "mejs.afrikaans": "Afrikaans", "mejs.albanian": "Albanian", "mejs.arabic": "Arabic", "mejs.belarusian": "Belarusian", "mejs.bulgarian": "Bulgarian", "mejs.catalan": "Catalan", "mejs.chinese": "Chinese", "mejs.chinese-simplified": "Chinese (Simplified)", "mejs.chinese-traditional": "Chinese (Traditional)", "mejs.croatian": "Croatian", "mejs.czech": "Czech", "mejs.danish": "Danish", "mejs.dutch": "Dutch", "mejs.english": "English", "mejs.estonian": "Estonian", "mejs.filipino": "Filipino", "mejs.finnish": "Finnish", "mejs.french": "French", "mejs.galician": "Galician", "mejs.german": "German", "mejs.greek": "Greek", "mejs.haitian-creole": "Haitian Creole", "mejs.hebrew": "Hebrew", "mejs.hindi": "Hindi", "mejs.hungarian": "Hungarian", "mejs.icelandic": "Icelandic", "mejs.indonesian": "Indonesian", "mejs.irish": "Irish", "mejs.italian": "Italian", "mejs.japanese": "Japanese", "mejs.korean": "Korean", "mejs.latvian": "Latvian", "mejs.lithuanian": "Lithuanian", "mejs.macedonian": "Macedonian", "mejs.malay": "Malay", "mejs.maltese": "Maltese", "mejs.norwegian": "Norwegian", "mejs.persian": "Persian", "mejs.polish": "Polish", "mejs.portuguese": "Portuguese", "mejs.romanian": "Romanian", "mejs.russian": "Russian", "mejs.serbian": "Serbian", "mejs.slovak": "Slovak", "mejs.slovenian": "Slovenian", "mejs.spanish": "Spanish", "mejs.swahili": "Swahili", "mejs.swedish": "Swedish", "mejs.tagalog": "Tagalog", "mejs.thai": "Thai", "mejs.turkish": "Turkish", "mejs.ukrainian": "Ukrainian", "mejs.vietnamese": "Vietnamese", "mejs.welsh": "Welsh", "mejs.yiddish": "Yiddish" } };
 	</script>
 	<script type='text/javascript'
-		src='assets/vendor/wp-includes/js/mediaelement/mediaelement-and-player.min08e1.js?ver=4.2.16'
+		src='~/assets/vendor/wp-includes/js/mediaelement/mediaelement-and-player.min08e1.js?ver=4.2.16'
 		id='mediaelement-core-js'></script>
 	<script type='text/javascript'
-		src='assets/vendor/wp-includes/js/mediaelement/mediaelement-migrate.min1eb7.js?ver=6.0.3'
+		src='~/assets/vendor/wp-includes/js/mediaelement/mediaelement-migrate.min1eb7.js?ver=6.0.3'
 		id='mediaelement-migrate-js'></script>
 	<script type='text/javascript' id='mediaelement-js-extra'>
 		/* <![CDATA[ */
 		var _wpmejsSettings = { "pluginPath": "\/wp-includes\/js\/mediaelement\/", "classPrefix": "mejs-", "stretching": "responsive" };
 /* ]]> */
 	</script>
-	<script type='text/javascript' src='assets/vendor/wp-includes/js/mediaelement/wp-mediaelement.min1eb7.js?ver=6.0.3'
+	<script type='text/javascript' src='~/assets/vendor/wp-includes/js/mediaelement/wp-mediaelement.min1eb7.js?ver=6.0.3'
 		id='wp-mediaelement-js'></script>
 	<script type='text/javascript'
-		src='assets/vendor/wp-content/themes/fiorello/assets/js/modules/plugins/jquery.appear1eb7.js?ver=6.0.3'
+		src='~/assets/vendor/wp-content/themes/fiorello/assets/js/modules/plugins/jquery.appear1eb7.js?ver=6.0.3'
 		id='appear-js'></script>
 	<script type='text/javascript'
-		src='assets/vendor/wp-content/themes/fiorello/assets/js/modules/plugins/modernizr.min1eb7.js?ver=6.0.3'
+		src='~/assets/vendor/wp-content/themes/fiorello/assets/js/modules/plugins/modernizr.min1eb7.js?ver=6.0.3'
 		id='modernizr-js'></script>
-	<script type='text/javascript' src='assets/vendor/wp-includes/js/hoverIntent.min3e5a.js?ver=1.10.2'
+	<script type='text/javascript' src='~/assets/vendor/wp-includes/js/hoverIntent.min3e5a.js?ver=1.10.2'
 		id='hoverIntent-js'></script>
 	<script type='text/javascript'
-		src='assets/vendor/wp-content/themes/fiorello/assets/js/modules/plugins/jquery.plugin1eb7.js?ver=6.0.3'
+		src='~/assets/vendor/wp-content/themes/fiorello/assets/js/modules/plugins/jquery.plugin1eb7.js?ver=6.0.3'
 		id='jquery-plugin-js'></script>
 	<script type='text/javascript'
-		src='assets/vendor/wp-content/themes/fiorello/assets/js/modules/plugins/owl.carousel.min1eb7.js?ver=6.0.3'
+		src='~/assets/vendor/wp-content/themes/fiorello/assets/js/modules/plugins/owl.carousel.min1eb7.js?ver=6.0.3'
 		id='owl-carousel-js'></script>
 	<script type='text/javascript'
-		src='assets/vendor/wp-content/themes/fiorello/assets/js/modules/plugins/jquery.waypoints.min1eb7.js?ver=6.0.3'
+		src='~/assets/vendor/wp-content/themes/fiorello/assets/js/modules/plugins/jquery.waypoints.min1eb7.js?ver=6.0.3'
 		id='waypoints-js'></script>
 	<script type='text/javascript'
-		src='assets/vendor/wp-content/themes/fiorello/assets/js/modules/plugins/fluidvids.min1eb7.js?ver=6.0.3'
+		src='~/assets/vendor/wp-content/themes/fiorello/assets/js/modules/plugins/fluidvids.min1eb7.js?ver=6.0.3'
 		id='fluidvids-js'></script>
 	<script type='text/javascript'
-		src='assets/vendor/wp-content/plugins/js_composer/assets/lib/prettyphoto/js/jquery.prettyPhoto.minf7be.js?ver=6.10.0'
+		src='~/assets/vendor/wp-content/plugins/js_composer/assets/lib/prettyphoto/js/jquery.prettyPhoto.minf7be.js?ver=6.10.0'
 		id='prettyphoto-js'></script>
 	<script type='text/javascript'
-		src='assets/vendor/wp-content/themes/fiorello/assets/js/modules/plugins/perfect-scrollbar.jquery.min1eb7.js?ver=6.0.3'
+		src='~/assets/vendor/wp-content/themes/fiorello/assets/js/modules/plugins/perfect-scrollbar.jquery.min1eb7.js?ver=6.0.3'
 		id='perfect-scrollbar-js'></script>
 	<script type='text/javascript'
-		src='assets/vendor/wp-content/themes/fiorello/assets/js/modules/plugins/ScrollToPlugin.min1eb7.js?ver=6.0.3'
+		src='~/assets/vendor/wp-content/themes/fiorello/assets/js/modules/plugins/ScrollToPlugin.min1eb7.js?ver=6.0.3'
 		id='ScrollToPlugin-js'></script>
 	<script type='text/javascript'
-		src='assets/vendor/wp-content/themes/fiorello/assets/js/modules/plugins/parallax.min1eb7.js?ver=6.0.3'
+		src='~/assets/vendor/wp-content/themes/fiorello/assets/js/modules/plugins/parallax.min1eb7.js?ver=6.0.3'
 		id='parallax-js'></script>
 	<script type='text/javascript'
-		src='assets/vendor/wp-content/themes/fiorello/assets/js/modules/plugins/jquery.waitforimages1eb7.js?ver=6.0.3'
+		src='~/assets/vendor/wp-content/themes/fiorello/assets/js/modules/plugins/jquery.waitforimages1eb7.js?ver=6.0.3'
 		id='waitforimages-js'></script>
 	<script type='text/javascript'
-		src='assets/vendor/wp-content/themes/fiorello/assets/js/modules/plugins/jquery.easing.1.31eb7.js?ver=6.0.3'
+		src='~/assets/vendor/wp-content/themes/fiorello/assets/js/modules/plugins/jquery.easing.1.31eb7.js?ver=6.0.3'
 		id='jquery-easing-1.3-js'></script>
 	<script type='text/javascript'
-		src='assets/vendor/wp-content/plugins/js_composer/assets/lib/bower/isotope/dist/isotope.pkgd.minf7be.js?ver=6.10.0'
+		src='~/assets/vendor/wp-content/plugins/js_composer/assets/lib/bower/isotope/dist/isotope.pkgd.minf7be.js?ver=6.10.0'
 		id='isotope-js'></script>
 	<script type='text/javascript'
-		src='assets/vendor/wp-content/themes/fiorello/assets/js/modules/plugins/packery-mode.pkgd.min1eb7.js?ver=6.0.3'
+		src='~/assets/vendor/wp-content/themes/fiorello/assets/js/modules/plugins/packery-mode.pkgd.min1eb7.js?ver=6.0.3'
 		id='packery-js'></script>
 	<script type='text/javascript'
-		src='assets/vendor/wp-content/plugins/fiorello-core/shortcodes/countdown/assets/js/plugins/jquery.countdown.min1eb7.js?ver=6.0.3'
+		src='~/assets/vendor/wp-content/plugins/fiorello-core/shortcodes/countdown/assets/js/plugins/jquery.countdown.min1eb7.js?ver=6.0.3'
 		id='countdown-js'></script>
 	<script type='text/javascript'
-		src='assets/vendor/wp-content/plugins/fiorello-core/shortcodes/counter/assets/js/plugins/counter1eb7.js?ver=6.0.3'
+		src='~/assets/vendor/wp-content/plugins/fiorello-core/shortcodes/counter/assets/js/plugins/counter1eb7.js?ver=6.0.3'
 		id='counter-js'></script>
 	<script type='text/javascript'
-		src='assets/vendor/wp-content/plugins/fiorello-core/shortcodes/counter/assets/js/plugins/absoluteCounter.min1eb7.js?ver=6.0.3'
+		src='~/assets/vendor/wp-content/plugins/fiorello-core/shortcodes/counter/assets/js/plugins/absoluteCounter.min1eb7.js?ver=6.0.3'
 		id='absoluteCounter-js'></script>
 	<script type='text/javascript'
-		src='assets/vendor/wp-content/plugins/fiorello-core/shortcodes/custom-font/assets/js/plugins/typed1eb7.js?ver=6.0.3'
+		src='~/assets/vendor/wp-content/plugins/fiorello-core/shortcodes/custom-font/assets/js/plugins/typed1eb7.js?ver=6.0.3'
 		id='typed-js'></script>
 	<script type='text/javascript'
-		src='assets/vendor/wp-content/plugins/fiorello-core/shortcodes/full-screen-sections/assets/js/plugins/jquery.fullPage.min1eb7.js?ver=6.0.3'
+		src='~/assets/vendor/wp-content/plugins/fiorello-core/shortcodes/full-screen-sections/assets/js/plugins/jquery.fullPage.min1eb7.js?ver=6.0.3'
 		id='fullPage-js'></script>
 	<script type='text/javascript'
-		src='assets/vendor/wp-content/plugins/fiorello-core/shortcodes/pie-chart/assets/js/plugins/easypiechart1eb7.js?ver=6.0.3'
+		src='~/assets/vendor/wp-content/plugins/fiorello-core/shortcodes/pie-chart/assets/js/plugins/easypiechart1eb7.js?ver=6.0.3'
 		id='easypiechart-js'></script>
 	<script type='text/javascript'
-		src='assets/vendor/wp-content/plugins/fiorello-core/shortcodes/uncovering-sections/assets/js/plugins/curtain1eb7.js?ver=6.0.3'
+		src='~/assets/vendor/wp-content/plugins/fiorello-core/shortcodes/uncovering-sections/assets/js/plugins/curtain1eb7.js?ver=6.0.3'
 		id='curtain-js'></script>
 	<script type='text/javascript'
-		src='assets/vendor/wp-content/plugins/fiorello-core/shortcodes/vertical-split-slider/assets/js/plugins/jquery.multiscroll.min1eb7.js?ver=6.0.3'
+		src='~/assets/vendor/wp-content/plugins/fiorello-core/shortcodes/vertical-split-slider/assets/js/plugins/jquery.multiscroll.min1eb7.js?ver=6.0.3'
 		id='multiscroll-js'></script>
 	<script type='text/javascript'
-		src='assets/vendor/wp-content/plugins/woocommerce/assets/js/select2/select2.full.min8d46.js?ver=4.0.3-wc.7.0.0'
+		src='~/assets/vendor/wp-content/plugins/woocommerce/assets/js/select2/select2.full.min8d46.js?ver=4.0.3-wc.7.0.0'
 		id='select2-js'></script>
 	<script type='text/javascript'
 		src='http://maps.googleapis.com/maps/api/js?key=AIzaSyCalEwtrmzlJkPMx6RXsCfq4gGvPHfXww4&amp;ver=6.0.3'
@@ -3226,9 +3237,9 @@
 		var mkdfPerPageVars = { "vars": { "mkdfMobileHeaderHeight": 70, "mkdfStickyScrollAmount": 730, "mkdfHeaderTransparencyHeight": 0, "mkdfHeaderVerticalWidth": 0 } };
 /* ]]> */
 	</script>
-	<script type='text/javascript' src='assets/vendor/wp-content/themes/fiorello/assets/js/modules.min1eb7.js?ver=6.0.3'
+	<script type='text/javascript' src='~/assets/vendor/wp-content/themes/fiorello/assets/js/modules.min1eb7.js?ver=6.0.3'
 		id='fiorello-mikado-modules-js'></script>
-	<script type="text/javascript" src="assets/js/snippet7048.js?key=af3078fd-a5ae-40da-bee0-e589b98c8603&amp;ver=6.0.3"
+	<script type="text/javascript" src="~/assets/js/snippet7048.js?key=af3078fd-a5ae-40da-bee0-e589b98c8603&amp;ver=6.0.3"
 		id="ze-snippet"></script>
 	<script type="text/javascript">
 		zE(function () {
@@ -3249,7 +3260,7 @@
 		});
 	</script>
 	<script type='text/javascript'
-		src='assets/vendor/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.minf7be.js?ver=6.10.0'
+		src='~/assets/vendor/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.minf7be.js?ver=6.10.0'
 		id='wpb_composer_front_js-js'></script>
 	<script id="rs-initialisation-scripts">
 		var tpj = jQuery;
@@ -3329,4 +3340,5 @@
 </body>
 
 <!-- Mirrored from fiorello.qodeinteractive.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 29 Oct 2022 07:41:30 GMT -->
-</html>>
+
+</html>

@@ -6,8 +6,8 @@
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Categories</h4>
-                        <a class="btn btn-main" href="/admin/category/create">Create categories</a>
+                        <h4 class="card-title">Products</h4>
+                        <a class="btn btn-main" href="/admin/product/create">Create categories</a>
                         <div class="table-responsive">
                             <table class="table">
                                 <thead>
@@ -25,17 +25,17 @@
                                             <td>@product.Title</td>
                                             <td><img src="~/images/@product.PhotoName"><td>
                                             *<td>
-                                                <a class="btn btn-primary" asp-action="update" asp-controller="category" asp-area="admin" asp-route-id="@product.Id">
+                                                <a class="btn btn-primary" asp-action="update" asp-controller="product" asp-area="admin" asp-route-id="@product.Id">
                                                     Update
                                                 </a>
                                                 <br>
                                                 </br>
-                                                <a class="btn btn-danger" asp-action="delete" asp-controller="category" asp-area="admin" asp-route-id="@product.Id">
+                                                <a class="btn btn-danger" asp-action="delete" asp-controller="product" asp-area="admin" asp-route-id="@product.Id">
                                                     Delete
                                                 </a>
                                                 <br>
                                                 </br>
-                                                <a class="btn btn-danger" asp-action="details" asp-controller="category" asp-area="admin" asp-route-id="@product.Id">
+                                                <a class="btn btn-danger" asp-action="details" asp-controller="product" asp-area="admin" asp-route-id="@product.Id">
                                                     Details
                                                 </a>
                                             </td>*

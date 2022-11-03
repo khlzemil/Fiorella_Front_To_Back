@@ -16,7 +16,7 @@ namespace Fiorello_Front_To_Back.Areas.Admin.ViewModels.Products
 
 
         public int CategoryId { get; set; }
-        public List<SelectListItem>? Categories { get; set; }
+        public List<SelectListItem> Categories { get; set; }
         public ProductStatus Status { get; set; }
 
         public IFormFile? MainPhoto { get; set; }

@@ -16,8 +16,6 @@
 
         public List<ProductPhoto> ProductPhotos { get; set; }
 
-
-
     }
 
     public enum ProductStatus
