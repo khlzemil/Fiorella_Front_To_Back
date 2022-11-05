@@ -1,4 +1,6 @@
-﻿<div class="mkdf-content">
+﻿@using Fiorello_Front_To_Back.ViewModels.FaqPage
+@model FaqPageIndexViewModel
+<div class="mkdf-content">
 				<div class="mkdf-content-inner">
 					<div class="mkdf-title-holder mkdf-centered-type mkdf-title-va-header-bottom mkdf-title-content-va-middle mkdf-preload-background mkdf-has-bg-image mkdf-bg-parallax"
 						style="height: 320px;background-color: #fafaf9;background-image:url(assets/vendor/wp-content/uploads/2018/05/p1-title-img.jpg);"
@@ -21,7 +23,9 @@
 							<div class="mkdf-grid-row">
 								<div class="mkdf-page-content-holder mkdf-grid-col-9 mkdf-grid-col-push-3">
 									<section class="wpb-content-wrapper">
-										<div data-mkdf-anchor="magnificence" class="vc_row wpb_row vc_row-fluid">
+										@foreach (var faq in Model.FaqPages)
+										{
+											<div data-mkdf-anchor="magnificence" class="vc_row wpb_row vc_row-fluid">
 											<div
 												class="wpb_column vc_column_container vc_col-sm-1 vc_hidden-md vc_hidden-sm vc_hidden-xs">
 												<div class="vc_column-inner">
@@ -36,16 +40,10 @@
 															class="mkdf-section-title-holder   mkdf-st-subtitle-pos-under">
 															<div class="mkdf-st-inner">
 																<h3 class="mkdf-st-title">
-																	<span class="mkdf-st-title-highlight">01.</span>
-																	Creating messages of magnificence.
+																	<span class="mkdf-st-title-highlight">. @faq.Order.ToString("D2")</span>
+																	@faq.Title
 																</h3>
-																<p class="mkdf-st-text" style="margin-top: 22px">
-																	Class aptent taciti sociosqu ad litora torquent per
-																	conubia nostra, per inceptos imenaeos. Mauris in
-																	erat justo. Nullam ac urna eu felis dapibus
-																	condimentum sit amet a augue. Sed non neque elit.
-																	Sed ut imperdiet nisi. Proin condimentum fermentum
-																	nunc. Etiam haretra, erat sed. </p>
+																@Html.Raw(@faq.Description)
 															</div>
 														</div>
 														<div class="vc_empty_space" style="height: 55px"><span
@@ -54,226 +52,9 @@
 												</div>
 											</div>
 										</div>
-										<div data-mkdf-anchor="beautiful" class="vc_row wpb_row vc_row-fluid">
-											<div
-												class="wpb_column vc_column_container vc_col-sm-1 vc_hidden-md vc_hidden-sm vc_hidden-xs">
-												<div class="vc_column-inner">
-													<div class="wpb_wrapper"></div>
-												</div>
-											</div>
-											<div
-												class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-11 vc_col-md-12 vc_col-xs-12">
-												<div class="vc_column-inner">
-													<div class="wpb_wrapper">
-														<div
-															class="mkdf-section-title-holder   mkdf-st-subtitle-pos-under">
-															<div class="mkdf-st-inner">
-																<h3 class="mkdf-st-title">
-																	<span class="mkdf-st-title-highlight">02.</span>
-																	Always making beautiful flowers.
-																</h3>
-																<p class="mkdf-st-text" style="margin-top: 22px">
-																	Class aptent taciti sociosqu ad litora torquent per
-																	conubia nostra, per inceptos imenaeos. Mauris in
-																	erat justo. Nullam ac urna eu felis dapibus
-																	condimentum sit amet a augue. Sed non neque elit.
-																	Sed ut imperdiet nisi. Proin condimentum fermentum
-																	nunc. Etiam aretra, erat sed fermentum feugiat,
-																	velit mauris egestas quam, ut aliquam massa nisl
-																	quis eque. Suspendisse in orci enim. This is
-																	Photoshop's version of Lorem Ipsum. Proin gravida
-																	nibh vel velit auctor aliquet. Aenean sollicitudin,
-																	lorem quis bibendum auctor, nisi elit consequat
-																	ipsum, nec sagittis sem nibh id elit. Duis sed odio
-																	sit amet nibh vulputate cursus a sit. </p>
-															</div>
-														</div>
-														<div class="vc_empty_space" style="height: 55px"><span
-																class="vc_empty_space_inner"></span></div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div data-mkdf-anchor="celebrations" class="vc_row wpb_row vc_row-fluid">
-											<div
-												class="wpb_column vc_column_container vc_col-sm-1 vc_hidden-md vc_hidden-sm vc_hidden-xs">
-												<div class="vc_column-inner">
-													<div class="wpb_wrapper"></div>
-												</div>
-											</div>
-											<div
-												class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-11 vc_col-md-12 vc_col-xs-12">
-												<div class="vc_column-inner">
-													<div class="wpb_wrapper">
-														<div
-															class="mkdf-section-title-holder   mkdf-st-subtitle-pos-under">
-															<div class="mkdf-st-inner">
-																<h3 class="mkdf-st-title">
-																	<span class="mkdf-st-title-highlight">03.</span>
-																	Made for all of life’s celebrations.
-																</h3>
-																<p class="mkdf-st-text" style="margin-top: 22px">
-																	Class aptent taciti sociosqu ad litora torquent per
-																	conubia nostra, per inceptos imenaeos. Mauris in
-																	erat justo. Nullam ac urna eu felis dapibus
-																	condimentum sit amet a augue. Sed non neque elit.
-																	Sed ut imperdiet nisi. Proin condimentum fermentum
-																	nunc. Etiam haretra, erat sed. </p>
-															</div>
-														</div>
-														<div class="vc_empty_space" style="height: 55px"><span
-																class="vc_empty_space_inner"></span></div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div data-mkdf-anchor="unique" class="vc_row wpb_row vc_row-fluid">
-											<div
-												class="wpb_column vc_column_container vc_col-sm-1 vc_hidden-md vc_hidden-sm vc_hidden-xs">
-												<div class="vc_column-inner">
-													<div class="wpb_wrapper"></div>
-												</div>
-											</div>
-											<div
-												class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-11 vc_col-md-12 vc_col-xs-12">
-												<div class="vc_column-inner">
-													<div class="wpb_wrapper">
-														<div
-															class="mkdf-section-title-holder   mkdf-st-subtitle-pos-under">
-															<div class="mkdf-st-inner">
-																<h3 class="mkdf-st-title">
-																	<span class="mkdf-st-title-highlight">04.</span>
-																	Shouldn’t your flowers be unique too?
-																</h3>
-																<p class="mkdf-st-text" style="margin-top: 22px">
-																	Class aptent taciti sociosqu ad litora torquent per
-																	conubia nostra, per inceptos imenaeos. Mauris in
-																	erat justo. Nullam ac urna eu felis dapibus
-																	condimentum sit amet a augue. Sed non neque elit.
-																	Sed ut imperdiet nisi. Proin condimentum fermentum
-																	nunc. Etiam aretra, erat sed fermentum feugiat,
-																	velit mauris egestas quam, ut aliquam assa nisl quis
-																	neque. Suspendisse in orci enim. This is </p>
-															</div>
-														</div>
-														<div class="vc_empty_space" style="height: 55px"><span
-																class="vc_empty_space_inner"></span></div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div data-mkdf-anchor="emotions" class="vc_row wpb_row vc_row-fluid">
-											<div
-												class="wpb_column vc_column_container vc_col-sm-1 vc_hidden-md vc_hidden-sm vc_hidden-xs">
-												<div class="vc_column-inner">
-													<div class="wpb_wrapper"></div>
-												</div>
-											</div>
-											<div
-												class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-11 vc_col-md-12 vc_col-xs-12">
-												<div class="vc_column-inner">
-													<div class="wpb_wrapper">
-														<div
-															class="mkdf-section-title-holder   mkdf-st-subtitle-pos-under">
-															<div class="mkdf-st-inner">
-																<h3 class="mkdf-st-title">
-																	<span class="mkdf-st-title-highlight">05.</span> We
-																	create emotions.
-																</h3>
-																<p class="mkdf-st-text" style="margin-top: 22px">
-																	Class aptent taciti sociosqu ad litora torquent per
-																	conubia nostra, per inceptos imenaeos. Mauris in
-																	erat justo. Nullam ac urna eu felis dapibus
-																	condimentum sit amet a augue. Sed non neque elit.
-																	Sed ut imperdiet nisi. Proin condimentum fermentum
-																	nunc. Etiam aretra, erat sed fermentum feugiat,
-																	velit mauris egestas quam, ut aliquam massa nisl
-																	quis eque. Suspendisse in orci enim. This is
-																	Photoshop's version of Lorem Ipsum. Proin gravida
-																	nibh vel velit auctor aliquet. Aenean sollicitudin,
-																	lorem quis bibendum auctor, nisi elit consequat
-																	ipsum, nec sagittis sem nibh id elit. Duis sed odio
-																	sit amet nibh vulputate cursus a sit. </p>
-															</div>
-														</div>
-														<div class="vc_empty_space" style="height: 55px"><span
-																class="vc_empty_space_inner"></span></div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div data-mkdf-anchor="thoughts" class="vc_row wpb_row vc_row-fluid">
-											<div
-												class="wpb_column vc_column_container vc_col-sm-1 vc_hidden-md vc_hidden-sm vc_hidden-xs">
-												<div class="vc_column-inner">
-													<div class="wpb_wrapper"></div>
-												</div>
-											</div>
-											<div
-												class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-11 vc_col-md-12 vc_col-xs-12">
-												<div class="vc_column-inner">
-													<div class="wpb_wrapper">
-														<div
-															class="mkdf-section-title-holder   mkdf-st-subtitle-pos-under">
-															<div class="mkdf-st-inner">
-																<h3 class="mkdf-st-title">
-																	<span class="mkdf-st-title-highlight">06.</span>
-																	With your thoughts in hand.
-																</h3>
-																<p class="mkdf-st-text" style="margin-top: 22px">
-																	Class aptent taciti sociosqu ad litora torquent per
-																	conubia nostra, per inceptos imenaeos. Mauris in
-																	erat justo. Nullam ac urna eu felis dapibus
-																	condimentum sit amet a augue. Sed non neque elit.
-																	Sed ut imperdiet nisi. Proin condimentum fermentum
-																	nunc. Etiam haretra, erat sed. </p>
-															</div>
-														</div>
-														<div class="vc_empty_space" style="height: 55px"><span
-																class="vc_empty_space_inner"></span></div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div data-mkdf-anchor="solutions" class="vc_row wpb_row vc_row-fluid">
-											<div
-												class="wpb_column vc_column_container vc_col-sm-1 vc_hidden-md vc_hidden-sm vc_hidden-xs">
-												<div class="vc_column-inner">
-													<div class="wpb_wrapper"></div>
-												</div>
-											</div>
-											<div
-												class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-11 vc_col-md-12 vc_col-xs-12">
-												<div class="vc_column-inner">
-													<div class="wpb_wrapper">
-														<div
-															class="mkdf-section-title-holder   mkdf-st-subtitle-pos-under">
-															<div class="mkdf-st-inner">
-																<h3 class="mkdf-st-title">
-																	<span class="mkdf-st-title-highlight">07.</span>
-																	Creative solutions.
-																</h3>
-																<p class="mkdf-st-text" style="margin-top: 22px">
-																	Class aptent taciti sociosqu ad litora torquent per
-																	conubia nostra, per inceptos imenaeos. Mauris in
-																	erat justo. Nullam ac urna eu felis dapibus
-																	condimentum sit amet a augue. Sed non neque elit.
-																	Sed ut imperdiet nisi. Proin condimentum fermentum
-																	nunc. Etiam aretra, erat sed fermentum feugiat,
-																	velit mauris egestas quam, ut aliquam massa nisl
-																	quis eque. Suspendisse in orci enim. This is
-																	Photoshop's version of Lorem Ipsum. Proin gravida
-																	nibh vel velit auctor aliquet. Aenean sollicitudin,
-																	lorem quis bibendum auctor, nisi elit consequat
-																	ipsum, nec sagittis sem nibh. </p>
-															</div>
-														</div>
-														<div class="vc_empty_space" style="height: 55px"><span
-																class="vc_empty_space_inner"></span></div>
-													</div>
-												</div>
-											</div>
-										</div>
+										}
+										
+										
 									</section>
 								</div>
 								<div class="mkdf-sidebar-holder mkdf-grid-col-3 mkdf-grid-col-pull-9">

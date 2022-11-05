@@ -1,4 +1,7 @@
-﻿<div class="mkdf-content">
+﻿@using Fiorello_Front_To_Back.ViewModels.About
+@model ExpertIndexViewModel
+
+<div class="mkdf-content">
 				<div class="mkdf-content-inner">
 					<div class="mkdf-title-holder mkdf-centered-type mkdf-title-va-header-bottom mkdf-title-content-va-middle mkdf-preload-background mkdf-has-bg-image mkdf-bg-parallax"
 						style="height: 320px;background-color: #fafaf9;background-image:url(assets/vendor/wp-content/uploads/2018/05/p1-title-img.jpg);"
@@ -160,7 +163,8 @@
 														<div class="mkdf-row-grid-section-wrapper ">
 															<div class="mkdf-row-grid-section">
 																<div class="vc_row wpb_row vc_inner vc_row-fluid">
-																	<div
+																	@await Component.InvokeAsync("Expert")
+																	@*<div
 																		class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-3 vc_col-md-6">
 																		<div class="vc_column-inner">
 																			<div class="wpb_wrapper">
@@ -287,7 +291,7 @@
 																				</div>
 																			</div>
 																		</div>
-																	</div>
+																	</div>*@
 																</div>
 															</div>
 														</div>

@@ -38,10 +38,10 @@
                                                 <div class="mkdf-prl-loading">
                                                     <span class="mkdf-prl-loading-msg">Loading...</span>
                                                 </div>
-                                                <div class="mkdf-pl-outer mkdf-outer-space">
+                                                <div id="products" class="mkdf-pl-outer mkdf-outer-space">
                                                     @foreach (var product in Model.Products)
                                                     {
-                                                        <div style="margin-inline:30px" class="mkdf-pli mkdf-item-space ">
+                                                        <div class="mkdf-pli mkdf-item-space ">
                                                             <div class="mkdf-pli-inner">
                                                                 <div class="mkdf-pli-image">
                                                                     <span class="mkdf-pli-new-product">@product.Status</span>
@@ -72,7 +72,11 @@
                                                         </div>
                                                     }
                                                 </div>
+
                                             </div>
+                                                <div class="d-flex justify-content-center">
+                                                    <button id="loadmore" class="btn btn-danger">Load more</button>
+                                                </div>
                                         </div>
                                     </div>
                                 </div>

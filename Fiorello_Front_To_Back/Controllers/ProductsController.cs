@@ -17,9 +17,27 @@ namespace Fiorello_Front_To_Back.Controllers
         {
             var model = new ProductIndexViewModel
             {
-                Products = await _appDbContext.Product.OrderByDescending(p => p.Id).ToListAsync()
+                Products = await _appDbContext.Product.OrderByDescending(prc => prc.Id).Take(4).ToListAsync()
             };
             return View(model);
+        }
+
+        public async Task<IActionResult> LoadMore(int skipRow)
+        {
+            bool isLast = false;
+            var product = await _appDbContext.Product.OrderByDescending(prc => prc.Id).Skip(4 + skipRow).Take(4).ToListAsync();
+            if (8 + skipRow >= _appDbContext.Product.Count())
+            {
+                isLast = true;
+            }
+
+            var model = new ProductLoadMoreViewModel
+            {
+                Products = product,
+                IsLast = isLast
+            };
+            return PartialView("_ProductPartial", model);
+
         }
 
         public async Task<IActionResult> Details(int id)

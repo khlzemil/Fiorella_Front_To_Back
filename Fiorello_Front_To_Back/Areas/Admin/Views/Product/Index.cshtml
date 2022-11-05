@@ -24,7 +24,7 @@
                                             <td>@product.Id</td>
                                             <td>@product.Title</td>
                                             <td><img src="~/images/@product.PhotoName"><td>
-                                            *<td>
+                                            <td>
                                                 <a class="btn btn-primary" asp-action="update" asp-controller="product" asp-area="admin" asp-route-id="@product.Id">
                                                     Update
                                                 </a>
@@ -38,7 +38,7 @@
                                                 <a class="btn btn-danger" asp-action="details" asp-controller="product" asp-area="admin" asp-route-id="@product.Id">
                                                     Details
                                                 </a>
-                                            </td>*
+                                            </td>
                                         </tr>
                                     }
                                 </tbody>

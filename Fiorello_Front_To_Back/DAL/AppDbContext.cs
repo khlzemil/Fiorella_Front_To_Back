@@ -12,7 +12,8 @@ namespace front_to_back.DAL
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Product { get; set; }
         public DbSet<ProductPhoto> ProductPhotos { get; set;}
-
+        public DbSet<Experts> Experts{ get; set; }
+        public DbSet<FaqPage> FaqPages { get; set; }
 
     }
 }

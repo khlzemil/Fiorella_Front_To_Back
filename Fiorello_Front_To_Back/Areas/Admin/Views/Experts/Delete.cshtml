@@ -1,0 +1,43 @@
+﻿@using Fiorello_Front_To_Back.Models
+@model Experts
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+
+                        <p class="card-description">
+                            Delete expert
+                        </p>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Name Surname</th>
+                                    <th>Position</th>
+                                    <th>Photo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>@Model.Id</td>
+                                    <td>@Model.Name @Model.Surname</td>
+                                    <td>@Model.Position</td>
+                                    <td><img src="~/images/@Model.PhotoName" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <form method="post" asp-action="deletecomponent" asp-controller="experts" asp-area="admin" asp-route-id="@Model.Id">
+                            <button onclick="confirm('Are you sure')" class="btn btn-danger">
+                                Yes
+                            </button>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

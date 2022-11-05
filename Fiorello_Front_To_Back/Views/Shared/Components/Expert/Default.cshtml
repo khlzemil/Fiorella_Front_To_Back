@@ -1,0 +1,37 @@
+﻿@using Fiorello_Front_To_Back.ViewModels.About
+@model ExpertIndexViewModel
+
+
+@foreach (var expert in Model.Experts)
+{
+    <div class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-3 vc_col-md-6">
+        <div class="vc_column-inner">
+            <div class="wpb_wrapper">
+                <div class="mkdf-team-holder mkdf-team-info-below-image">
+                    <div class="mkdf-team-inner">
+                        <div class="mkdf-team-image">
+                            <img width="222"
+                             height="222"
+                             src="~/images/@expert.PhotoName"
+                             class="attachment-full size-full"
+                             alt="a"
+                             srcset="~/images/@expert.PhotoName 222w, ~/images/@expert.PhotoName 100w, ~/images/@expert.PhotoName 50w, ~/images/@expert.PhotoName 150w"
+                             sizes="(max-width: 222px) 100vw, 222px"
+                             loading="eager" />
+                        </div>
+                        <div class="mkdf-team-info">
+                            <h6 class="mkdf-team-name">
+                                @expert.Name @expert.Surname
+                            </h6>
+                            <span class="mkdf-team-position">@expert.Position</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="vc_empty_space"
+                 style="height: 68px">
+                    <span class="vc_empty_space_inner"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,32 @@
+﻿@using Fiorello_Front_To_Back.Areas.Admin.ViewModels.FaqPage
+@model FaqPageDetailsViewModel
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+
+                        <p class="card-description">
+                            Details faq page
+                        </p>
+
+                        <span>@Model.Title</span>
+
+                        <br />
+                        <br />
+                        <span>@Html.Raw(@Model.Description)</span>
+                         <br />
+                        <br />
+                        <span>@Model.Order</span>
+
+                        <button>
+                            <a class="btn btn-light" asp-action="index" asp-controller="faqpage" asp-area="admin">Previous</a>
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
