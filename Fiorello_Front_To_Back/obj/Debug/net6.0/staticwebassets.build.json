@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gPCtm147x08sHClxqp+MPIsAfV6j6q66K/AQ3yVQwLM=",
+  "Hash": "kGNMn603zOqYdxqeeF5asERckNuGb99x7qQf/jLEUDg=",
   "Source": "Fiorello_Front_To_Back",
   "BasePath": "_content/Fiorello_Front_To_Back",
   "Mode": "Default",
@@ -17663,6 +17663,23 @@
       "OriginalItemSpec": "wwwroot\\images\\0f32b7f1-ba55-4de8-b34f-aad7d318e741_download1.jpg"
     },
     {
+      "Identity": "C:\\Users\\hp\\Desktop\\Fiorella_Front_To_Back\\Fiorello_Front_To_Back\\wwwroot\\images\\2204f9d9-3845-4a0b-b352-fbaccc081a09_download1.jpg",
+      "SourceId": "Fiorello_Front_To_Back",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hp\\Desktop\\Fiorella_Front_To_Back\\Fiorello_Front_To_Back\\wwwroot\\",
+      "BasePath": "_content/Fiorello_Front_To_Back",
+      "RelativePath": "images/2204f9d9-3845-4a0b-b352-fbaccc081a09_download1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\2204f9d9-3845-4a0b-b352-fbaccc081a09_download1.jpg"
+    },
+    {
       "Identity": "C:\\Users\\hp\\Desktop\\Fiorella_Front_To_Back\\Fiorello_Front_To_Back\\wwwroot\\images\\24dec208-164c-4190-9a13-89232b8e2c13_shop-3-gallery-4-300x400.jpg",
       "SourceId": "Fiorello_Front_To_Back",
       "SourceType": "Discovered",
@@ -17882,6 +17899,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\a4b0c699-e705-4e15-b61d-400b6db7b2b6_shop-3-gallery-3-300x400.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\hp\\Desktop\\Fiorella_Front_To_Back\\Fiorello_Front_To_Back\\wwwroot\\images\\a8c5a287-8338-46fd-9570-3dd81cfb6631_our-work-03.jpg",
+      "SourceId": "Fiorello_Front_To_Back",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hp\\Desktop\\Fiorella_Front_To_Back\\Fiorello_Front_To_Back\\wwwroot\\",
+      "BasePath": "_content/Fiorello_Front_To_Back",
+      "RelativePath": "images/a8c5a287-8338-46fd-9570-3dd81cfb6631_our-work-03.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\a8c5a287-8338-46fd-9570-3dd81cfb6631_our-work-03.jpg"
     },
     {
       "Identity": "C:\\Users\\hp\\Desktop\\Fiorella_Front_To_Back\\Fiorello_Front_To_Back\\wwwroot\\images\\ab68af7b-dabd-48f3-a215-b97a0f8ddff6_shop-7-gallery-3-300x400.jpg",

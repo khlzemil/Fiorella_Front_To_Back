@@ -1,10 +1,9 @@
-﻿using Fiorello_Front_To_Back.ViewModels;
-using Fiorello_Front_To_Back.ViewModels.Products;
+﻿using Fiorello_Front_To_Back.ViewModels.Home;
 using front_to_back.DAL;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace Fiorello_Front_To_Back.Controllers
+namespace fiorello_project.Controllers
 {
     public class HomeController : Controller
     {
@@ -14,16 +13,17 @@ namespace Fiorello_Front_To_Back.Controllers
         {
             _appDbContext = appDbContext;
         }
+
         public async Task<IActionResult> Index()
         {
-
-            var model = new ProductIndexViewModel
+            var model = new HomeIndexViewModel
             {
-                Products = await _appDbContext.Product.Include(x => x.ProductPhotos).
-                                               ToListAsync()
+                Products = await _appDbContext.Product.OrderByDescending(p => p.Id).Take(8).ToListAsync(),
+                HomeMainSlider = await _appDbContext.HomeMainSliders.Include(hs => hs.HomeMainSliderPhotos.OrderBy(hs => hs.Order)).FirstOrDefaultAsync()
             };
 
             return View(model);
         }
+
     }
 }

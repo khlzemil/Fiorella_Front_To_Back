@@ -14,6 +14,10 @@ namespace front_to_back.DAL
         public DbSet<ProductPhoto> ProductPhotos { get; set;}
         public DbSet<Experts> Experts{ get; set; }
         public DbSet<FaqPage> FaqPages { get; set; }
+        public DbSet<HomeMainSlider> HomeMainSliders { get; set; }
+
+        public DbSet<HomeMainSliderPhoto> HomeMainSliderPhotos { get; set; }
+        public DbSet<Blog> Blogs { get; set; }
 
     }
 }

@@ -1,0 +1,59 @@
+﻿@using Fiorello_Front_To_Back.Areas.Admin.ViewModels.HomeMainSlider
+@model HomeMainSliderIndexViewModel
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Home Main Slider</h4>
+                        @if (Model.HomeMainSlider != null)
+                        {
+
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>Title</th>
+                                            <th>Description</th>
+                                            <th>SubPhoto</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+
+                                        <tr>
+                                            <td>@Model.HomeMainSlider.Id</td>
+                                            <td>@Model.HomeMainSlider.Title</td>
+                                            <td>@Html.Raw(Model.HomeMainSlider.Description)</td>
+                                            <td><img src="~/assets/img/@Model.HomeMainSlider.SubPhotoName" /></td>
+
+
+                                            <td>
+
+                                                <a class="btn btn-primary " asp-action="update" asp-controller="homemainslider" asp-area="admin" asp-route-id=@Model.HomeMainSlider.Id>Update</a>
+                                                <a class="btn btn-primary btn-danger " onclick="confirm('eminsinizmi?')" asp-action="delete" asp-controller="homemainslider" asp-area="admin" asp-route-id=@Model.HomeMainSlider.Id>Delete</a>
+                                                <a class="btn btn-primary btn-details " asp-action="details" asp-controller="homemainslider" asp-area="admin" asp-route-id=@Model.HomeMainSlider.Id>Details</a>
+                                            </td>
+                                        </tr>
+
+
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        }
+                        else
+                        {
+                            <a class="btn btn-primary" asp-action="create" asp-controller="homemainslider" asp-area="admin">CREATE HomeMain Slider!</a>
+
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
