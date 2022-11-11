@@ -790,7 +790,7 @@ class="mkdf-woo-single-page home page-template page-template-full-width page-tem
 																<ul>
 																	<li id="nav-menu-item-242"
 																		class="menu-item menu-item-type-post_type menu-item-object-page ">
-																		<a asp-controller="myaccount" asp-action="index" class=""><span
+																		<a asp-controller="account" asp-action="register" class=""><span
 																				class="item_outer"><span
 																					class="item_text">My
 																					Account</span></span></a></li>
@@ -1315,6 +1315,15 @@ class="mkdf-woo-single-page home page-template page-template-full-width page-tem
 											</div>
 										</div>
 									</div>
+											@if (User.Identity.IsAuthenticated)
+                                            {
+                                               <div>
+                                                    <h6>@User.Identity.Name</h6>
+                                               </div>
+                                               <div>
+													<button type="button" class="btn btn-primary"><a asp-action="logout" asp-controller="account" style="color:white">Logout</a></button>
+                                               </div>
+                                            }
 								</div>
 							</div>
 						</div>
