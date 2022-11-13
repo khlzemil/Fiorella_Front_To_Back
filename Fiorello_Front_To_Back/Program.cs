@@ -38,7 +38,7 @@ app.UseHttpsRedirection();
 
 app.MapControllerRoute(
     name: "areas",
-    pattern: "{area:exists}/{controller=dashboard}/{action=index}/{id?}"
+    pattern: "{area:exists}/{controller=account}/{action=login}/{id?}"
     );
 
 app.MapControllerRoute(
@@ -50,6 +50,16 @@ app.UseStaticFiles();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+var scopeFactory = app.Services.GetRequiredService<IServiceScopeFactory>();
+
+using (var scope = scopeFactory.CreateScope())
+{
+    var userManager = scope.ServiceProvider.GetService<UserManager<User>>();
+    var roleManager = scope.ServiceProvider.GetService<RoleManager<IdentityRole>>();
+    await DbInitializer.SeedAsync(userManager, roleManager);
+}
+
 app.Run();
 
 #endregion

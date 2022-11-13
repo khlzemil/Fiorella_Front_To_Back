@@ -1,4 +1,5 @@
-﻿using Fiorello_Front_To_Back.Models;
+﻿using Fiorello_Front_To_Back.Attributes;
+using Fiorello_Front_To_Back.Models;
 using Fiorello_Front_To_Back.ViewModels.MyAccount;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -16,6 +17,8 @@ namespace Fiorello_Front_To_Back.Controllers
             _userManager = userManager;
             _signInManager = signInManager;
         }
+
+        [OnlyAnonymous]
         public IActionResult Register()
         {
             return View();
@@ -48,6 +51,7 @@ namespace Fiorello_Front_To_Back.Controllers
         }
 
         [HttpGet]
+        [OnlyAnonymous]
         public async Task<IActionResult> Login()
         {
             return View();
@@ -71,11 +75,19 @@ namespace Fiorello_Front_To_Back.Controllers
                 ModelState.AddModelError(string.Empty, "Username or Password is incorrect");
                 return View(model);
             }
-            return RedirectToAction("index", "home");
+            if (!string.IsNullOrEmpty(model.ReturnUrl) && Url.IsLocalUrl(model.ReturnUrl))
+            {
+                return Redirect(model.ReturnUrl);
+            }
+            else
+            {
+                return RedirectToAction("index", "home");
+            }
         }
 
 
         [HttpGet]
+
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();

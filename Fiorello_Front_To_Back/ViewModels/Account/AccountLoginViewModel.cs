@@ -7,7 +7,9 @@ namespace Fiorello_Front_To_Back.ViewModels.MyAccount
         [Required]
         public string Username { get; set; }
 
-        [Required, DataType(DataType.Password)]
+        [Required, MaxLength(100), DataType(DataType.Password)]
         public string Password { get; set; }
+
+        public string? ReturnUrl { get; set; }
     }
 }
