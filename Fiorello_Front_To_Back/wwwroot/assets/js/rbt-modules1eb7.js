@@ -52,53 +52,53 @@
 
 	// lazy-load
 	function rbtLazyLoad() {
-		
-			var imagePlaceholder = new Image();
-			$(imagePlaceholder).on('load', function () {
-				var load = function() {
-					$('.rbt-list .rbt-lazy-load img:not(.rbt-lazy-loading)').each(function (i, object) {
-						object = $(object);
-						var rect = object[0].getBoundingClientRect(),
-							vh = ($(window).height() || document.documentElement.clientHeight),
-							vw = ($(window).width() || document.documentElement.clientWidth),
-							oh = object.outerHeight(),
-							ow = object.outerWidth();
-						
-						
-						if (
-							(rect.top != 0 || rect.right != 0 || rect.bottom != 0 || rect.left != 0) &&
-							(rect.top >= 0 || rect.top + oh >= 0) &&
-							(rect.bottom >= 0 && rect.bottom - oh - vh <= 300) &&
-							(rect.left >= 0 || rect.left + ow >= 0) &&
-							(rect.right >= 0 && rect.right - ow - vw <= 0)
-						) {
-							
-							object.addClass('rbt-lazy-loading');
-							
-							var imageObj = new Image();
-							
-							$(imageObj).on('load', function () {
-								var $this = $(this);
-								object.attr('src', $this.attr('src'));
-								object
-									.removeAttr('data-image')
-									.removeData('image')
-									.removeClass('rbt-lazy-loading');
-								object.parent().removeClass('rbt-lazy-load');
-							}).attr('src', object.data('image'));
-						}
-					});
-				}
-				
-				$('.rbt-theme-dropdown .rbt-btn').on('click', function () {
-					setTimeout(function(){load();},500); //0.5s is animation time of toolbar showing
+
+		var imagePlaceholder = new Image();
+		$(imagePlaceholder).on('load', function () {
+			var load = function () {
+				$('.rbt-list .rbt-lazy-load img:not(.rbt-lazy-loading)').each(function (i, object) {
+					object = $(object);
+					var rect = object[0].getBoundingClientRect(),
+						vh = ($(window).height() || document.documentElement.clientHeight),
+						vw = ($(window).width() || document.documentElement.clientWidth),
+						oh = object.outerHeight(),
+						ow = object.outerWidth();
+
+
+					if (
+						(rect.top != 0 || rect.right != 0 || rect.bottom != 0 || rect.left != 0) &&
+						(rect.top >= 0 || rect.top + oh >= 0) &&
+						(rect.bottom >= 0 && rect.bottom - oh - vh <= 300) &&
+						(rect.left >= 0 || rect.left + ow >= 0) &&
+						(rect.right >= 0 && rect.right - ow - vw <= 0)
+					) {
+
+						object.addClass('rbt-lazy-loading');
+
+						var imageObj = new Image();
+
+						$(imageObj).on('load', function () {
+							var $this = $(this);
+							object.attr('src', $this.attr('src'));
+							object
+								.removeAttr('data-image')
+								.removeData('image')
+								.removeClass('rbt-lazy-loading');
+							object.parent().removeClass('rbt-lazy-load');
+						}).attr('src', object.data('image'));
+					}
 				});
-				
-				$(".rbt-list").scroll(function() {
-					load();
-				});
-				
-			}).attr('src', '../toolbar.qodeinteractive.com/_toolbar/assets/img/rbt-placeholder.jpg');
+			}
+
+			$('.rbt-theme-dropdown .rbt-btn').on('click', function () {
+				setTimeout(function () { load(); }, 500); //0.5s is animation time of toolbar showing
+			});
+
+			$(".rbt-list").scroll(function () {
+				load();
+			});
+
+		}).attr('src', '../toolbar.qodeinteractive.com/_toolbar/assets/img/rbt-placeholder.jpg');
 	}
 
 	// open/close logic
@@ -106,7 +106,7 @@
 		var opener = $('.rbt-theme-dropdown .rbt-btn'),
 			list = $('.rbt-sidearea'),
 			splitScreenPresent = typeof $.fn.multiscroll !== 'undefined' && typeof $.fn.multiscroll.setMouseWheelScrolling !== 'undefined';
-			fullPagePresent = typeof $.fn.fullpage !== 'undefined' && typeof $.fn.fullpage.setMouseWheelScrolling !== 'undefined';
+		fullPagePresent = typeof $.fn.fullpage !== 'undefined' && typeof $.fn.fullpage.setMouseWheelScrolling !== 'undefined';
 
 		var toggleList = function () {
 			opener.on('click', function () {
@@ -170,13 +170,13 @@
 				list = $('.rbt-sidearea');
 
 			var disableScroll = function () {
-				window.removeEventListener('mousewheel', smoothScrollListener, {passive: false});
-				window.removeEventListener('DOMMouseScroll', smoothScrollListener, {passive: false});
+				window.removeEventListener('mousewheel', smoothScrollListener, { passive: false });
+				window.removeEventListener('DOMMouseScroll', smoothScrollListener, { passive: false });
 			};
 
 			var enableScroll = function () {
-				window.addEventListener('mousewheel', smoothScrollListener, {passive: false});
-				window.addEventListener('DOMMouseScroll', smoothScrollListener, {passive: false});
+				window.addEventListener('mousewheel', smoothScrollListener, { passive: false });
+				window.addEventListener('DOMMouseScroll', smoothScrollListener, { passive: false });
 			};
 
 			opener

@@ -1325,7 +1325,7 @@ class="mkdf-woo-single-page home page-template page-template-full-width page-tem
 									</a>
 									<div class="mkdf-shopping-cart-holder mkdf-cart-info-is-disabled">
 										<div class="mkdf-shopping-cart-inner">
-											<a itemprop="url" class="mkdf-header-cart" href="cart/index.html">
+											<a itemprop="url" class="mkdf-header-cart" asp-action="index" asp-controller="basket">
 												<span class="mkdf-cart-icon-number-holder">
 													<span class="mkdf-cart-icon"><i
 															class="mkdf-icon-dripicons dripicon dripicons-shopping-bag "></i></span>
@@ -1348,8 +1348,12 @@ class="mkdf-woo-single-page home page-template page-template-full-width page-tem
 
 				 					         @if (User.Identity.IsAuthenticated)
                                               {
+                                                               
                                                             <span>@User.Identity.Name</span>
-														 <button type="button" class="btn btn-primary"><a asp-action="logout" asp-controller="account" style="color:white">Logout</a></button>
+                                                            
+                                                           
+                                                         
+														 <button type="button" class="btn btn-warning"><a asp-action="logout" asp-controller="account">Logout</a></button>
                                              
                                             }
               
