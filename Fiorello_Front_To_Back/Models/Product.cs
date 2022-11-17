@@ -16,6 +16,11 @@
 
         public List<ProductPhoto> ProductPhotos { get; set; }
 
+        public List<BasketProduct> BasketProducts { get; set; }
+
+
+        public DateTime CreatedAt { get; set; }
+
     }
 
     public enum ProductStatus

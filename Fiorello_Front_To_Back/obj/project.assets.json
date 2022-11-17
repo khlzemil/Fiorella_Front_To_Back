@@ -9595,11 +9595,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hp\\Desktop\\Fiorella_Front_To_Back\\Fiorello_Front_To_Back\\Fiorello_Front_To_Back.csproj",
+      "projectUniqueName": "C:\\Users\\hp\\Desktop\\Main\\Fiorella_Front_To_Back\\Fiorello_Front_To_Back\\Fiorello_Front_To_Back.csproj",
       "projectName": "Fiorello_Front_To_Back",
-      "projectPath": "C:\\Users\\hp\\Desktop\\Fiorella_Front_To_Back\\Fiorello_Front_To_Back\\Fiorello_Front_To_Back.csproj",
+      "projectPath": "C:\\Users\\hp\\Desktop\\Main\\Fiorella_Front_To_Back\\Fiorello_Front_To_Back\\Fiorello_Front_To_Back.csproj",
       "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hp\\Desktop\\Fiorella_Front_To_Back\\Fiorello_Front_To_Back\\obj\\",
+      "outputPath": "C:\\Users\\hp\\Desktop\\Main\\Fiorella_Front_To_Back\\Fiorello_Front_To_Back\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",

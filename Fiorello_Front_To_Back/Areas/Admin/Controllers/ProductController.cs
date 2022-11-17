@@ -21,14 +21,67 @@ namespace Fiorello_Front_To_Back.Areas.Admin.Controllers
             _fileService = fileService;
             _webHostEnvironment = webHostEnvironment;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(ProductsIndexViewModel model)
         {
-            var model = new ProductsIndexViewModel
+            var products = FilterProducts(model);
+            model = new ProductsIndexViewModel
             {
-                Products = await _appDbContext.Product.ToListAsync()
+                Products = await products.Include(p => p.Category).ToListAsync(),
+                Categories = await _appDbContext.Categories.Select(c => new SelectListItem
+                {
+                    Text = c.Title,
+                    Value = c.Id.ToString()
+                }).ToListAsync()
             };
             return View(model);
         }
+        private IQueryable<Product> FilterProducts(ProductsIndexViewModel model)
+        {
+            var products = FilterByTitle(model.Title);
+            products = FilterByCategory(products, model.CategoryId);
+
+            products = FilterByPrice(products, model.MinPrice, model.MaxPrice);
+
+            products = FilterByQuantity(products, model.MinQuantity, model.MaxQuantity);
+
+            products = FilterByCreatedAt(products, model.CreatedAtStart, model.CreatedAtEnd);
+
+            products = FilterByStatus(products, model.Status);
+
+            return products;
+        }
+        private IQueryable<Product> FilterByTitle(string title)
+        {
+            return _appDbContext.Product.Where(p => !string.IsNullOrEmpty(title) ? p.Title.Contains(title) : true);
+        }
+
+        private IQueryable<Product> FilterByCategory(IQueryable<Product> products, int? categoryId)
+        {
+            return products.Where(p => categoryId != null ? p.CategoryId == categoryId : true);
+        }
+
+        private IQueryable<Product> FilterByPrice(IQueryable<Product> products, double? minPrice, double? maxPrice)
+        {
+            return products.Where(p => (minPrice != null ? p.Cost >= minPrice : true) && (maxPrice != null ? p.Cost <= maxPrice : true));
+        }
+
+
+        private IQueryable<Product> FilterByQuantity(IQueryable<Product> products, int? minQuantity, int? maxQuantity)
+        {
+            return products.Where(p => (minQuantity != null ? p.Quantity >= minQuantity : true) && (maxQuantity != null ? p.Quantity <= maxQuantity : true));
+        }
+
+        private IQueryable<Product> FilterByCreatedAt(IQueryable<Product> products, DateTime? createdAtstart, DateTime? createdEndstart)
+        {
+            return products.Where(p => (createdAtstart != null ? p.CreatedAt >= createdAtstart : true) && (createdEndstart != null ? p.CreatedAt <= createdEndstart : true));
+        }
+
+        private IQueryable<Product> FilterByStatus(IQueryable<Product> products, ProductStatus? status)
+        {
+            return products.Where(p => status != null ? p.Status == status : true);
+        }
+
+
 
         [HttpGet]
         public async Task<IActionResult> Create()

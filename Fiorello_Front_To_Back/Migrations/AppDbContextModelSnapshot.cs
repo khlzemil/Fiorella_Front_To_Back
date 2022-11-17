@@ -22,6 +22,52 @@ namespace Fiorello_Front_To_Back.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("Fiorello_Front_To_Back.Models.Basket", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
+                    b.ToTable("Baskets");
+                });
+
+            modelBuilder.Entity("Fiorello_Front_To_Back.Models.BasketProduct", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("BasketId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BasketId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("BasketProducts");
+                });
+
             modelBuilder.Entity("Fiorello_Front_To_Back.Models.Blog", b =>
                 {
                     b.Property<int>("Id")
@@ -182,6 +228,9 @@ namespace Fiorello_Front_To_Back.Migrations
 
                     b.Property<double>("Cost")
                         .HasColumnType("float");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -443,6 +492,36 @@ namespace Fiorello_Front_To_Back.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("Fiorello_Front_To_Back.Models.Basket", b =>
+                {
+                    b.HasOne("Fiorello_Front_To_Back.Models.User", "user")
+                        .WithOne("Basket")
+                        .HasForeignKey("Fiorello_Front_To_Back.Models.Basket", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("user");
+                });
+
+            modelBuilder.Entity("Fiorello_Front_To_Back.Models.BasketProduct", b =>
+                {
+                    b.HasOne("Fiorello_Front_To_Back.Models.Basket", "Basket")
+                        .WithMany("BasketProducts")
+                        .HasForeignKey("BasketId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Fiorello_Front_To_Back.Models.Product", "Product")
+                        .WithMany("BasketProducts")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Basket");
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("Fiorello_Front_To_Back.Models.HomeMainSliderPhoto", b =>
                 {
                     b.HasOne("Fiorello_Front_To_Back.Models.HomeMainSlider", "HomeMainSlider")
@@ -527,6 +606,11 @@ namespace Fiorello_Front_To_Back.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Fiorello_Front_To_Back.Models.Basket", b =>
+                {
+                    b.Navigation("BasketProducts");
+                });
+
             modelBuilder.Entity("Fiorello_Front_To_Back.Models.Category", b =>
                 {
                     b.Navigation("Products");
@@ -539,7 +623,15 @@ namespace Fiorello_Front_To_Back.Migrations
 
             modelBuilder.Entity("Fiorello_Front_To_Back.Models.Product", b =>
                 {
+                    b.Navigation("BasketProducts");
+
                     b.Navigation("ProductPhotos");
+                });
+
+            modelBuilder.Entity("Fiorello_Front_To_Back.Models.User", b =>
+                {
+                    b.Navigation("Basket")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

@@ -20,5 +20,8 @@ namespace front_to_back.DAL
         public DbSet<HomeMainSliderPhoto> HomeMainSliderPhotos { get; set; }
         public DbSet<Blog> Blogs { get; set; }
 
+        public DbSet<Basket> Baskets { get; set; }
+        public DbSet<BasketProduct> BasketProducts{ get; set; }
+
     }
 }

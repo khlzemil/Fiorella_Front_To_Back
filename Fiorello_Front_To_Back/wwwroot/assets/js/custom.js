@@ -25,12 +25,9 @@
             url: "/basket/add",
             data: {
                 id: id
-
             },
             success: function (result) {
-
                 console.log(result);
-
             }
         })
     })
@@ -53,7 +50,7 @@
     })
 
 
-    $(document).on('click', '#addcount', function () {
+    $(document).on('click', '#upcounter', function () {
         var id = $(this).data('id');
 
         $.ajax({
@@ -70,7 +67,7 @@
     })
 
 
-    $(document).on('click', '#downcount', function () {
+    $(document).on('click', '#downcounter', function () {
         var id = $(this).data('id');
 
         $.ajax({
