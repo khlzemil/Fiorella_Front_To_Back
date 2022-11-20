@@ -1347,15 +1347,10 @@ class="mkdf-woo-single-page home page-template page-template-full-width page-tem
 									</div>
 
 				 					         @if (User.Identity.IsAuthenticated)
-                                              {
-                                                               
-                                                            <span>@User.Identity.Name</span>
-                                                            
-                                                           
-                                                         
-														 <button type="button" class="btn btn-warning"><a asp-action="logout" asp-controller="account">Logout</a></button>
-                                             
-                                            }
+                                             {
+                                                          <span>@User.Identity.Name</span>
+														 <button type="button" class="btn btn-primary"><a style="color:white"  asp-action="logout" asp-controller="account">Logout</a></button>
+											 }
               
 								</div>
 							</div>
